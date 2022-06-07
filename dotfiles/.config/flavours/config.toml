@@ -1,0 +1,7 @@
+[[item]]
+template = "kitty"
+file = "~/.config/kitty/kitty.conf"
+
+[[item]]
+template = "alacritty"
+file = "~/.config/alacritty/alacritty.yml"
