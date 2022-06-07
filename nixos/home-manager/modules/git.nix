@@ -4,8 +4,13 @@
   programs.git = {
     userName = "Joakim Holm";
     userEmail = "joakimholm@protonmail.com";
-    extraConfig.init = {
-      defaultBranch = "master";
+    extraConfig = {
+      init = {
+        defaultBranch = "master";
+      };
+      pull = {
+        rebase = false;
+      };
     };
     ignores = [
       "todo.sh"
