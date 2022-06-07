@@ -1,0 +1,5 @@
+- protocol: https?
+  command: firefox
+  subrules:
+    - domain: youtube.com
+      command: mpv --speed=2.5
