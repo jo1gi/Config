@@ -6,6 +6,10 @@
       terminal.enable = true;
     };
 
+    programs = {
+      mpv.enable;
+    };
+
     home.packages = with pkgs; [
       alacritty
       sxiv
