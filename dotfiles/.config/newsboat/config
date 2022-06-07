@@ -1,0 +1,21 @@
+# Basic options
+auto-reload yes # Automatic reload when opening Newsboat
+browser openurl
+feed-sort-order title
+prepopulate-query-feeds yes # Automaticly updated query feeds
+show-read-feeds no
+
+# Bindings
+bind-key o open-in-browser-and-mark-read
+bind-key j down
+bind-key k up
+macro c set-tag "Combined"
+
+# Colours
+color background          white   black
+color listnormal          white   black
+color listfocus           magenta black
+color listnormal_unread   green   black
+color listfocus_unread    magenta black  bold
+color info                blue    black  bold
+color article             white   black
