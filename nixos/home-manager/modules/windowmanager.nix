@@ -7,7 +7,7 @@
     };
 
     programs = {
-      mpv.enable;
+      mpv.enable = true;
     };
 
     home.packages = with pkgs; [
