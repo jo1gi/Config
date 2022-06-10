@@ -19,6 +19,7 @@ in
       pillow
       distro
       pyyaml
+      pycrypto
     ]))
     lua5_3
   ];
