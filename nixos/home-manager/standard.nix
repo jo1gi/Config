@@ -15,6 +15,8 @@
   imports = [
     ./additional_programs.nix
 
+    ./modules/alacritty.nix
+    ./modules/base16.nix
     ./modules/emacs.nix
     ./modules/exa.nix
     ./modules/firefox.nix
