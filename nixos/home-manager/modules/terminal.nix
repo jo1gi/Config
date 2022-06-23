@@ -49,6 +49,7 @@
       unrar
       binutils
       pdftk
+      age
 
       # Misc
       ripgrep # Seach tool like grep
