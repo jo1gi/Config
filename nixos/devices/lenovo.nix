@@ -52,15 +52,13 @@
   };
 
   # Misc
-  networking.hostName = "sway";
+  networking.hostName = "lenovo";
+  services.syncthing.enable = true;
   personal = {
     desktop = "sway";
     laptop = true;
     games.enable = true;
     general.enable = true;
-    terminal = {
-      fontsize = 13;
-    };
   };
   home-manager.users.jo1gi.config.personal = {
     terminal = {
