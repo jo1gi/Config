@@ -7,11 +7,11 @@
     };
 
     programs = {
+      alacritty.enable = true;
       mpv.enable = true;
     };
 
     home.packages = with pkgs; [
-      alacritty
       sxiv
       pamixer
       pulsemixer

@@ -15,6 +15,9 @@
       newsboat
       tremc
 
+      # Other
+      jdk
+
       # Services
       transmission
     ];
