@@ -72,6 +72,7 @@
     ./modules/lightdm.nix
     ./modules/picom.nix
     ./modules/sound.nix
+    ./modules/syncthing.nix
     ./modules/vm.nix
     ./modules/work.nix
 	];
