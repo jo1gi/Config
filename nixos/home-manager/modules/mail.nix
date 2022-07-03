@@ -49,7 +49,7 @@
         { map = ["index" "pager"]; key = "\\CP"; action = "sidebar-prev"; }
         { map = ["index" "pager"]; key = "\\CN"; action = "sidebar-next"; }
         { map = ["index" "pager"]; key = "\\CO"; action = "sidebar-open"; }
-        { map = ["generic" "query"]; key = "<esc>"; action = "close"; }
+        { map = ["generic"]; key = "<esc>"; action = "close"; }
         # Index
         { map = ["index"]; key = "g"; action = "noop"; }
         { map = ["index"]; key = "gg"; action = "first-entry"; }
@@ -67,12 +67,11 @@
         color index_date green default
         color index_number cyan default
         color index_author blue default .*
+        color index bold default default "~U" # Unread messages
         # Menu
         color sidebar_divider lightblack default
         color status lightblack default
         color indicator default lightblack
-
-        unbind g
       '';
     };
   };
