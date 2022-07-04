@@ -21,6 +21,9 @@ imap("<C-s>", "<cmd>w<CR>")
 nmap("<leader>cf", "<cmd>execute \"edit /home/jo1gi/Projects/nixos/home/configs/neovim/old/ftplugin/\" . &filetype . \".vim\"<CR>")
 nmap("<leader>cy", "<cmd>UltiSnipsEdit<CR>")
 
+-- Conjure
+nmap("<C-c>", "<cmd>ConjureEvalRoot<cr>")
+
 -- Telescope
 nmap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 
