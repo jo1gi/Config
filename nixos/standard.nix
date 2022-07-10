@@ -27,7 +27,7 @@
 	# System packages
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
-		wget neovim git
+		wget git
 	];
 
 	# Doas
@@ -60,6 +60,8 @@
     libertinus
     gentium
 	];
+
+  system.stateVersion = "21.05";
 
 	imports = [
 		./home-manager/additional_programs.nix
