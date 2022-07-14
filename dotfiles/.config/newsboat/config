@@ -4,6 +4,7 @@ browser openurl
 feed-sort-order title
 prepopulate-query-feeds yes # Automaticly updated query feeds
 show-read-feeds no
+confirm-mark-feed-read no
 
 # Bindings
 bind-key o open-in-browser-and-mark-read
