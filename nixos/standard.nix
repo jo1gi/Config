@@ -63,7 +63,9 @@
     gentium
 	];
 
-  system.stateVersion = "21.05";
+  security.pki.certificateFiles = [
+    home-manager/assets/mailserver.crt
+  ];
 
 	imports = [
 		./home-manager/additional_programs.nix
