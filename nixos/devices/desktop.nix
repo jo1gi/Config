@@ -34,9 +34,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Misc
-  networking.hostName = "Desktop";
+  networking.hostName = "desktop";
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.deviceSection = ''Option "TearFree" "true"'';
+  services.syncthing.enable = true;
   personal = {
     desktop = "awesome";
     games.enable = true;

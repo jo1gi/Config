@@ -29,7 +29,7 @@
 	# System packages
 	nixpkgs.config.allowUnfree = true;
 	environment.systemPackages = with pkgs; [
-		wget neovim git
+		wget git
 	];
 
 	# Doas
@@ -62,6 +62,10 @@
     libertinus
     gentium
 	];
+
+  security.pki.certificateFiles = [
+    home-manager/assets/mailserver.crt
+  ];
 
 	imports = [
 		./home-manager/additional_programs.nix

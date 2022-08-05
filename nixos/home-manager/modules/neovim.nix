@@ -13,23 +13,22 @@ in
       }))
     ];
     programs.neovim = {
-      enable = true;
       extraConfig = ''
         set runtimepath^=/home/jo1gi/.config/neovim
+        set runtimepath^=/home/jo1gi/Projects/Vim/Org
         lua require('jo1gi.main')
         autocmd ColorScheme * call highlight#update()
         colorscheme base16-gruvbox-dark-medium
+        set mouse=""
       '';
-      package = pkgs.neovim-nightly;
+      # package = pkgs.neovim;
       plugins = with unstable.vimPlugins; [
         vim-commentary # Commenting shortcuts
         gitsigns-nvim # Git diff symbols
         lexima-vim # Auto close parentheses
-        plenary-nvim # Helper functions
         telescope-nvim # Fuzzy find
         conjure # Lisp REPL
         vim-table-mode
-        # which-key-nvim # Keybinding reminder
         (pkgs.vimUtils.buildVimPlugin {
           pname = "which-key-nvim";
           version = "1";
@@ -38,7 +37,16 @@ in
             ref = "main";
           };
         })
-
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "plenary-nvim";
+          version = "1";
+          src = builtins.fetchGit {
+            url = "https://github.com/nvim-lua/plenary.nvim.git";
+            ref = "master";
+          };
+          buildPhase = ":";
+          configurePhase =":";
+        })
 
         # Theming
         lualine-nvim
@@ -60,6 +68,7 @@ in
         nim-vim
         Coqtail
         neorg
+        vim-racket
         (pkgs.vimUtils.buildVimPlugin {
           pname = "vim-sile";
           version = "1";
@@ -92,8 +101,26 @@ in
         nvim-cmp # Completion engine
         cmp-path # Path completion
         cmp-nvim-lsp # Lsp support for nvim-cmp
-        luasnip # Snippets
-        cmp_luasnip # Snippet completion
+        # luasnip # Snippets
+        # cmp_luasnip # Snippet completion
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "nvim-snippy";
+          version = "1";
+          src = builtins.fetchGit {
+            url = "https://github.com/dcampos/nvim-snippy.git";
+            ref = "master";
+          };
+          buildPhase = ":";
+          configurePhase =":";
+        })
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "cmp-snippy";
+          version = "1";
+          src = builtins.fetchGit {
+            url = "https://github.com/dcampos/cmp-snippy.git";
+            ref = "master";
+          };
+        })
         cmp-emoji # Emoji completion
       ];
     extraPython3Packages = (ps: with ps; [

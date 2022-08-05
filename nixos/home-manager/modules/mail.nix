@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
+  # Setup mail
   accounts.email = {
     maildirBasePath = "Documents/Mail";
     accounts = {
@@ -49,14 +50,13 @@
         { map = ["index" "pager"]; key = "\\CP"; action = "sidebar-prev"; }
         { map = ["index" "pager"]; key = "\\CN"; action = "sidebar-next"; }
         { map = ["index" "pager"]; key = "\\CO"; action = "sidebar-open"; }
-        { map = ["generic"]; key = "<esc>"; action = "close"; }
         # Index
         { map = ["index"]; key = "g"; action = "noop"; }
         { map = ["index"]; key = "gg"; action = "first-entry"; }
         { map = ["index"]; key = "G"; action = "last-entry"; }
       ];
       settings = {
-        index_format = "\"%4C %{%b %d} %-25.25L %s\"";
+        index_format = "\"%4C %{%b %d} %g %-25.25L %s\"";
       };
       sidebar = {
         enable = true;
@@ -75,4 +75,13 @@
       '';
     };
   };
+
+  # Setup imapfilter
+  home.packages = with pkgs; [
+    imapfilter
+  ];
+  home.sessionVariables = {
+    IMAPFILTER_HOME = "$HOME/.config/imapfilter";
+  };
+  home.file.".config/imapfilter/certificates".source = ../assets/mailserver.crt;
 }

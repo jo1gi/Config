@@ -11,6 +11,7 @@
       bat.enable      = true;
       exa.enable      = true;
       git.enable      = true;
+      neomutt.enable  = true;
       starship.enable = true;
       zsh.enable      = true;
       zoxide.enable   = true;
