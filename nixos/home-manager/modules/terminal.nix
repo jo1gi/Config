@@ -19,6 +19,7 @@
 
     home.sessionPath = [
       "$HOME/.bin"
+      "$HOME/.local/bin"
     ];
 
     # Universal shell aliases
