@@ -35,6 +35,31 @@
             display: None;
           }
         '';
+        bookmarks = {
+          # Application interfaces
+          "Syncthing" = {
+            keyword = "syncthing";
+            url = "http://localhost:8384/";
+          };
+          # Programming
+          "Github" = {
+            keyword = "github";
+            url = "https://github.com";
+          };
+          "Gitlab" = {
+            keyword = "gitlab";
+            url = "https://gitlab.com";
+          };
+          # School
+          "Brightspace" = {
+            keyword = "brightspace";
+            url = "https://brightspace.au.dk/d2l/home";
+          };
+          "Mit Studie" = {
+            keyword = "mitstudie";
+            url = "https://mitstudie.au.dk/";
+          };
+        };
       };
     };
   };
