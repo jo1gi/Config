@@ -22,6 +22,7 @@
     ./modules/firefox.nix
     ./modules/git.nix # TODO: Add merge option
     ./modules/general.nix
+    ./modules/gtk.nix
     ./modules/mail.nix
     ./modules/mpd.nix
     ./modules/mpv.nix
