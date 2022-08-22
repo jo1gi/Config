@@ -29,6 +29,7 @@
     ./modules/neovim.nix
     ./modules/programming.nix
     ./modules/scripting.nix
+    ./modules/school.nix
     ./modules/starship.nix
     ./modules/terminal.nix
     ./modules/vscode.nix

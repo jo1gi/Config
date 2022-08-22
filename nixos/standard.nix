@@ -77,6 +77,7 @@
     ./modules/laptop.nix
     ./modules/lightdm.nix
     ./modules/picom.nix
+    ./modules/school.nix
     ./modules/sound.nix
     ./modules/syncthing.nix
     ./modules/vm.nix
