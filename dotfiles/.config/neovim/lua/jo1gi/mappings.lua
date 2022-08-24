@@ -38,6 +38,10 @@ wk.register({
     },
     ["åc"] = {
         name = "Configs",
+        s = {
+            "<cmd>execute \"edit \" . \"/home/jo1gi/.config/neovim/snippets/\" . &filetype . \".snippets\"<CR>",
+            "Edit Snippets"
+        },
     },
     ["ål"] = {
         name = "LSP",
