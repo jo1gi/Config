@@ -22,12 +22,14 @@
     ./modules/firefox.nix
     ./modules/git.nix # TODO: Add merge option
     ./modules/general.nix
+    ./modules/gtk.nix
     ./modules/mail.nix
     ./modules/mpd.nix
     ./modules/mpv.nix
     ./modules/neovim.nix
     ./modules/programming.nix
     ./modules/scripting.nix
+    ./modules/school.nix
     ./modules/starship.nix
     ./modules/terminal.nix
     ./modules/vscode.nix

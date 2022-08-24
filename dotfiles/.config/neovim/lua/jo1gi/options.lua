@@ -61,6 +61,8 @@ g["UltiSnipsJumpBackwardTrigger"] = "<c-z>"
 
 -- Conjure
 g["conjure#filetype#fennel"] = "conjure.client.fennel.stdio"
+g["conjure#client#scheme#stdio#command"] = "csi -quiet -:c"
+g["conjure#client#scheme#stdio#prompt_pattern"] = "\n-#;%d-> "
 
 -- Telescope
 require("telescope").setup {
