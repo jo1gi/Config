@@ -27,7 +27,7 @@ in
         gitsigns-nvim # Git diff symbols
         lexima-vim # Auto close parentheses
         telescope-nvim # Fuzzy find
-        conjure # Lisp REPL
+        unstable.vimPlugins.conjure # Lisp REPL
         vim-table-mode
         (pkgs.vimUtils.buildVimPlugin {
           pname = "which-key-nvim";
