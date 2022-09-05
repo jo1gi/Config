@@ -1,0 +1,49 @@
+# Setup document
+snippet mattemplate "Mathematics document template" b
+	\documentclass[a4paper, 12pt]{article}
+
+	\usepackage[utf8]{inputenc}
+	\usepackage{graphicx}
+	\usepackage{tgtermes}
+	\usepackage{fouriernc}
+	\usepackage[danish]{babel}
+	\usepackage[T1]{fontenc}
+	\usepackage[margin=3cm]{geometry}
+
+	\usepackage{amssymb}
+	\usepackage{amsmath}
+
+	\usepackage{enumerate}
+	\usepackage{verbatim}
+
+	\newcommand{\\N}{\\mathbb{N}}
+	\newcommand{\\Z}{\\mathbb{Z}}
+	\newcommand{\\Q}{\\mathbb{Q}}
+	\newcommand{\\R}{\\mathbb{R}}
+
+	\title{$1}
+	\author{${2:Joakim Holm, studienummer: 202107428}}
+
+	\begin{document}
+	\maketitle
+
+	$0
+	\end{document}
+
+
+snippet use "Use package" b
+	\usepackage$2{$1}$0
+
+# Basics
+snippet begin "Begin block" b
+	\begin{$1}
+		$0
+	\end{$1}
+
+# Math
+snippet eq "Equation block" b
+	\begin{equation*}
+		\begin{aligned}
+			$0
+		\end{aligned}
+	\end{equation*}
