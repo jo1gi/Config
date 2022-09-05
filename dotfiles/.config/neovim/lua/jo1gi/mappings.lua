@@ -25,7 +25,7 @@ nmap("<leader>cy", "<cmd>UltiSnipsEdit<CR>")
 nmap("<C-c>", "<cmd>ConjureEvalRoot<cr>")
 
 -- Telescope
-nmap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+nmap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<cr>")
 
 -- Terminal
 map('t', "<Esc>", '<C-\\><C-n>')
