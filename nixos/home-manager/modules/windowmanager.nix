@@ -13,6 +13,7 @@
 
     home.packages = with pkgs; [
       sxiv
+      zathura
       pamixer
       pulsemixer
     ];

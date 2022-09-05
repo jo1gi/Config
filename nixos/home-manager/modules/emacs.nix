@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  config.programs.emacs = lib.mkIf config.personal.programming {
+  config.programs.emacs = lib.mkIf config.personal.programming.enable {
     extraPackages = epkgs: with epkgs; [
       # Misc
       evil # Vim keybindings
@@ -10,15 +10,15 @@
       company # Completion
       projectile # Project management
       which-key # Shortcut suggestions
+      eglot # Lsp
 
       # Language plugins
-      eglot
-      rust-mode
-      crystal-mode
-      nix-mode
       clojure-mode
+      crystal-mode
       csharp-mode
       nim-mode
+      nix-mode
+      rust-mode
 
       # Theming
       base16-theme
