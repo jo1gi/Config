@@ -3,6 +3,7 @@
 {
   imports = [
     ./desktops/awesomewm.nix
+    ./desktops/i3.nix
     ./desktops/plasma.nix
     ./desktops/sway.nix
   ];
@@ -11,8 +12,9 @@
     type = lib.types.enum [
       "none"
       "awesome"
-      "plasma"
+      "i3"
       "gnome"
+      "plasma"
       "sway"
     ];
     default = "none";
