@@ -12,5 +12,3 @@ require("jo1gi.line")
 require("jo1gi.snippets")
 -- Treesitter
 require("jo1gi.treesitter")
--- Neorg
-require("jo1gi.git")

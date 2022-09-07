@@ -7,11 +7,6 @@ let
 in
 {
   config = {
-    nixpkgs.overlays = [
-      (import (builtins.fetchTarball {
-        url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-      }))
-    ];
     programs.neovim = {
       extraConfig = ''
         set runtimepath^=/home/jo1gi/.config/neovim
@@ -21,13 +16,12 @@ in
         colorscheme base16-gruvbox-dark-medium
         set mouse=""
       '';
-      # package = pkgs.neovim;
       plugins = with unstable.vimPlugins; [
         vim-commentary # Commenting shortcuts
         gitsigns-nvim # Git diff symbols
         lexima-vim # Auto close parentheses
         telescope-nvim # Fuzzy find
-        unstable.vimPlugins.conjure # Lisp REPL
+        conjure # Lisp REPL
         vim-table-mode
         (pkgs.vimUtils.buildVimPlugin {
           pname = "which-key-nvim";
