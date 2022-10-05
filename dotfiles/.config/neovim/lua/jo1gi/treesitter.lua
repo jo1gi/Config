@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = {"python", "rust", "java", "haskell", "clojure"},
+    ensure_installed = {"python", "rust", "java", "haskell", "clojure", "scheme"},
     highlight = {
         enable = true,
     },
