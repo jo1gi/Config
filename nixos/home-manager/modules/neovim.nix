@@ -92,11 +92,19 @@ in
         nvim-ts-rainbow
 
         # Completion
-        nvim-cmp # Completion engine
+        # nvim-cmp # Completion engine
         cmp-path # Path completion
         cmp-nvim-lsp # Lsp support for nvim-cmp
-        # luasnip # Snippets
-        # cmp_luasnip # Snippet completion
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "nvim-cmp";
+          version = "0.0.1";
+          src = builtins.fetchGit {
+            url = "https://github.com/hrsh7th/nvim-cmp.git";
+            ref = "main";
+          };
+          buildPhase = ":";
+          configurePhase =":";
+        })
         (pkgs.vimUtils.buildVimPlugin {
           pname = "nvim-snippy";
           version = "1";

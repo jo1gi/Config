@@ -48,10 +48,13 @@ wk.register({
     },
     ["ål"] = {
         name = "LSP",
+        a = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
         d = { "<cmd>lua vim.diagnostic.open_float(nil, {focus=false})<CR>", "Diagnostics window" },
         g = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto definition" },
-        h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover documentation" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+        h = { "<cmd>Lspsaga hover_doc<CR>", "Hover Documentation" },
+        -- h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover documentation" },
+        r = { "<cmd>Lspsaga rename<CR>" ,"Rename" },
+        -- r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
         t = { "<cmd>TroubleToggle<CR>", "Toggle Trouble window" },
     },
     ["ås"] = {

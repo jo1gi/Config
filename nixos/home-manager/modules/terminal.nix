@@ -35,6 +35,7 @@
       vifm-full
       amfora
       tmux
+      ncdu
 
       # Syncronization
       rclone

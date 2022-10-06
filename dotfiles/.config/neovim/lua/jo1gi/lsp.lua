@@ -18,36 +18,36 @@ nvim_lsp.java_language_server.setup{
 }
 
 -- Improvements
--- local saga = require 'lspsaga'
--- saga.init_lsp_saga()
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
 
 -- Custom icons
--- require('lspkind').init({
---     with_text = true,
---     symbol_map = {
---       Text = '',
---       Method = 'ƒ',
---       Function = '',
---       Constructor = '',
---       Variable = '',
---       Class = '',
---       Interface = 'ﰮ',
---       Module = '',
---       Property = '',
---       Unit = '',
---       Value = '',
---       Enum = '了',
---       Keyword = '',
---       Snippet = '﬌',
---       Color = '',
---       File = '',
---       Folder = '',
---       EnumMember = '',
---       Field = '',
---       Constant = '',
---       Struct = ''
---     },
--- })
+require('lspkind').init({
+    mode = "text_symbol",
+    symbol_map = {
+      Text = '',
+      Method = 'ƒ',
+      Function = '',
+      Constructor = '',
+      Variable = '',
+      Class = '',
+      Interface = 'ﰮ',
+      Module = '',
+      Property = '',
+      Unit = '',
+      Value = '',
+      Enum = '了',
+      Keyword = '',
+      Snippet = '﬌',
+      Color = '',
+      File = '',
+      Folder = '',
+      EnumMember = '',
+      Field = '',
+      Constant = '',
+      Struct = ''
+    },
+})
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
@@ -59,7 +59,7 @@ end
 vim.diagnostic.config({
   virtual_text = false,
   signs = true,
-  underline = true,
+  underline = false,
   update_in_insert = false,
   severity_sort = false,
 })
