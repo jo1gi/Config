@@ -12,6 +12,7 @@
       exa.enable      = true;
       git.enable      = true;
       neomutt.enable  = true;
+      ssh.enable      = true;
       starship.enable = true;
       zsh.enable      = true;
       zoxide.enable   = true;
