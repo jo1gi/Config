@@ -34,6 +34,7 @@
   hardware = {
     enableRedistributableFirmware = true;
     enableAllFirmware = true;
+    # Video
     opengl = {
       enable = true;
       driSupport32Bit = config.hardware.opengl.enable;
@@ -44,6 +45,8 @@
         driversi686Linux.amdvlk
       ];
     };
+    # Bluetooth
+    bluetooth.enable = true;
   };
   services.xserver ={
     videoDrivers = [ "amdgpu" ];
