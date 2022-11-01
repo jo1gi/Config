@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  config.programs.emacs = lib.mkIf config.personal.programming.enable {
+  config.programs.emacs = {
     extraPackages = epkgs: with epkgs; [
       # Misc
       evil # Vim keybindings
@@ -23,6 +23,11 @@
       # Theming
       base16-theme
       gruvbox-theme
+    ];
+    extraConfig = lib.concatStrings [
+      ''
+        (org-babel-load-file (expand-file-name "~/.config/emacs/config.org"))
+      ''
     ];
   };
 }
