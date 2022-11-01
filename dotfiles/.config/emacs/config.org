@@ -29,18 +29,29 @@
 #+BEGIN_SRC emacs-lisp
   (tool-bar-mode -1) ;; Disable toolbar
   (menu-bar-mode -1) ;; Disable Menu
+  (scroll-bar-mode -1) ;; Disable scrollbar
 #+END_SRC
 
-
+** Font
+#+BEGIN_SRC emacs-lisp
+  (set-face-attribute 'default nil
+		      :family "InconsolataGo Nerd Font"
+		      :height 110
+		      :weight 'normal
+		      :width 'normal)
+#+END_SRC
 ** Line Numbers
 #+BEGIN_SRC emacs-lisp
   (global-display-line-numbers-mode) ;; Enable line numbers
   (setq global-display-line-numbers 'relative) ;; :( Enable relative numbers
   (global-hl-line-mode t) ;; Enable Highlighted current line
 #+END_SRC
+** Theme
+#+BEGIN_SRC emacs-lisp
+  (load-theme 'gruvbox-dark-medium)
+#+END_SRC
 * Text editing
-** Completion
-*** Company
+** Company
 #+BEGIN_SRC emacs-lisp
   (setq company-minimum-prefix-length 1
 	company-idle-delay 0.0)
@@ -50,9 +61,41 @@
 #+BEGIN_SRC emacs-lisp
   (add-hook 'rust-mode-hook 'eglot-ensure)
   (add-hook 'java-mode-hook 'eglot-ensure)
-  (nmap "åeg" 'xref-find-definitions)
-  (nmap "åeh" 'eglot-help-at-point)
-  (nmap "åer" 'eglot-rename)
+  (nmap "ålg" 'xref-find-definitions)
+  (nmap "ålh" 'eglot-help-at-point)
+  (nmap "ålr" 'eglot-rename)
+  (defvar eglot-server-programs
+    `((java-mode . ("jdt-language-server"))))
+#+END_SRC
+** Projectile
+#+BEGIN_SRC emacs-lisp
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+#+END_SRC
+** Pairing brackets
+#+BEGIN_SRC emacs-lisp
+  (setq electric-pair-pairs
+	'(
+	  (?\( . ?\))
+	  (?\[ . ?\])
+	  (?\{ . ?\})
+	  (?\" . ?\")
+	  ))
+  (electric-pair-mode t)
+#+END_SRC
+** Scrolling
+#+BEGIN_SRC emacs-lisp
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+  (setq scroll-step 1) ;; keyboard scroll one line at a time
+#+END_SRC
+** File types
+*** Org
+#+BEGIN_SRC emacs-lisp
+  (evil-define-key 'normal org-mode-map (kbd "<tab>") #'org-cycle)
+#+END_SRC
+** Which key
+#+BEGIN_SRC emacs-lisp
+(which-key-mode)
 #+END_SRC
 * Misc
 ** Standard Options
@@ -64,4 +107,15 @@
   (global-prettify-symbols-mode t) ;; Enable icons
   (setq make-backup-file nil) ;; Disable backup files
   (setq auto-save-default nil) ;; Disable auto save
+#+END_SRC
+** Ido
+#+BEGIN_SRC emacs-lisp
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (ido-mode 1)
+#+END_SRC
+** Other mappings
+*** Save file
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-s") 'save-buffer)
 #+END_SRC
