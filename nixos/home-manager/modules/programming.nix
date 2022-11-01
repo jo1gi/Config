@@ -17,7 +17,8 @@
       # Java
       clojure
       clojure-lsp
-      java-language-server
+      jdt-language-server
+      # java-language-server
       metals
       # Rust
       rust-analyzer
