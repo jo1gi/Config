@@ -1,0 +1,73 @@
+* Evil
+#+BEGIN_SRC emacs-lisp
+  (evil-mode)
+#+END_SRC
+** Helper functions
+#+BEGIN_SRC emacs-lisp
+  (defun nmap(keys function)
+    (define-key evil-normal-state-map (kbd keys) function)
+    )
+
+  (defun local-nmap(keys function)
+    (define-key evil-normal-state-local-map (kbd keys) function)
+    )
+  
+  (defun imap(keys function)
+    (define-key evil-insert-state-map (kbd keys) function)
+    )
+
+  (defun vmap(keys function)
+    (define-key evil-visual-state-map (kbd keys) function)
+    )
+
+  (defun rmap(keys function)
+    (define-key evil-replace-state-map (kbd keys) functions)
+    )
+#+END_SRC
+* Theme
+** Disable menus
+#+BEGIN_SRC emacs-lisp
+  (tool-bar-mode -1) ;; Disable toolbar
+  (menu-bar-mode -1) ;; Disable Menu
+#+END_SRC
+
+
+** Line Numbers
+#+BEGIN_SRC emacs-lisp
+  (global-display-line-numbers-mode) ;; Enable line numbers
+  (setq global-display-line-numbers 'relative) ;; :( Enable relative numbers
+  (global-hl-line-mode t) ;; Enable Highlighted current line
+#+END_SRC
+* Text editing
+** Completion
+*** Company
+#+BEGIN_SRC emacs-lisp
+  (setq company-minimum-prefix-length 1
+	company-idle-delay 0.0)
+  (add-hook 'after-init-hook 'global-company-mode)
+#+END_SRC
+** Eglot
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'rust-mode-hook 'eglot-ensure)
+  (add-hook 'java-mode-hook 'eglot-ensure)
+  (nmap "åeg" 'xref-find-definitions)
+  (nmap "åeh" 'eglot-help-at-point)
+  (nmap "åer" 'eglot-rename)
+#+END_SRC
+* Misc
+** Standard Options
+#+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-message t) ;; Disable start message
+  (setq vc-follow-symlinks t) ;; Automaticly follow symlinks
+  (setq scroll-conservatively 100) ;; Scroll line for line
+  (setq ring-bell-function 'ignore) ;; Disable bell sound
+  (global-prettify-symbols-mode t) ;; Enable icons
+  (setq make-backup-file nil) ;; Disable backup files
+  (setq auto-save-default nil) ;; Disable auto save
+#+END_SRC
+** Ido
+#+BEGIN_SRC emacs-lisp
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (ido-mode 1)
+#+END_SRC
