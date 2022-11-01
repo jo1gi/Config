@@ -1,5 +1,7 @@
 require('nvim-treesitter.configs').setup {
+    parser_install_dir = "~/.local/share/nvim/tree-sitter/",
     ensure_installed = {"python", "rust", "java", "haskell", "clojure", "scheme"},
+    -- Plugins
     highlight = {
         enable = true,
     },
