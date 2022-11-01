@@ -87,7 +87,7 @@ in
             ref = "master";
           };
         })
-        nvim-treesitter
+        (nvim-treesitter.withPlugins(_: pkgs.tree-sitter.allGrammars))
         nvim-treesitter-textobjects
         nvim-ts-rainbow
 
@@ -123,7 +123,6 @@ in
             ref = "master";
           };
         })
-        cmp-emoji # Emoji completion
       ];
     extraPython3Packages = (ps: with ps; [
       pynvim
