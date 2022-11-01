@@ -2,7 +2,7 @@ local nvim_lsp = require('lspconfig')
 
 -- Cmp Setup
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Language setup
 servers = { "clojure_lsp", "gopls", "nimls", "pyright", "rust_analyzer", "metals" }
@@ -18,7 +18,7 @@ nvim_lsp.java_language_server.setup{
 }
 
 -- Improvements
-local saga = require 'lspsaga'
+local saga = require('lspsaga')
 saga.init_lsp_saga()
 
 -- Custom icons
