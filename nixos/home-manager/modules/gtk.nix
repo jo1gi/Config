@@ -34,10 +34,6 @@
       name = "Adwaita-dark";
     };
 
-    iconTheme = {
-      name = "Oomox-gruvbox-dark";
-      package = pkgs.gruvbox-dark-icons-gtk;
-    };
   };
 
 }
