@@ -1,0 +1,3 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i bash -p bash -p fontforge
+fontforge -lang=ff -c 'Open($1); Generate($2); Close();' "$1" "$2"
