@@ -37,6 +37,7 @@
             "Drafts" "Junk" "Notifikationer" "Sent" "Shopping" "Spejder" "Trash" "Uni"
           ];
         };
+        notmuch.enable = true;
       };
     };
   };
@@ -74,11 +75,13 @@
         color indicator default lightblack
       '';
     };
+    notmuch.enable = true;
   };
 
   # Setup imapfilter
   home.packages = with pkgs; [
     imapfilter
+    sieveshell # Manage remove sieve scripts
   ];
   home.sessionVariables = {
     IMAPFILTER_HOME = "$HOME/.config/imapfilter";
