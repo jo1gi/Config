@@ -11,6 +11,7 @@
       ublock-origin
       cookies-txt
       keepassxc-browser
+      redirector
     ];
     profiles = {
       standard = {
