@@ -87,7 +87,7 @@ in
             ref = "master";
           };
         })
-        (nvim-treesitter.withPlugins(_: pkgs.tree-sitter.allGrammars))
+        (nvim-treesitter.withPlugins(_: unstable.tree-sitter.allGrammars))
         nvim-treesitter-textobjects
         nvim-ts-rainbow
 
