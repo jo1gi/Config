@@ -41,16 +41,21 @@ in
           configurePhase =":";
         })
 
-        # Theming
-        lualine-nvim
-        indentLine
-        nvim-web-devicons
+        # UI
+        lualine-nvim # Statusline
+        indentLine # Line indicating indents
+        nvim-web-devicons # Icons for different plugins
+        # nvim-tree-lua
+        neo-tree-nvim # File tree
+        nui-nvim # UI Library
 
         # Language plugins
         nvim-lspconfig # Main lsp
         lspsaga-nvim # Extra lsp capabilities
         lspkind-nvim # Images for lsp completion
         trouble-nvim # Inline diagnostics
+        nvim-jdtls # Java lsp
+
         vim-nix
         fennel-vim
         vim-ledger

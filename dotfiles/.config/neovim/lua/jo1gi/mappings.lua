@@ -27,6 +27,9 @@ nmap("<C-c>", "<cmd>ConjureEvalRoot<cr>")
 -- Telescope
 nmap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<cr>")
 
+-- NeoTree
+nmap("<C-f>", "<cmd>NeoTreeFloatToggle<cr>")
+
 -- Terminal
 map('t', "<Esc>", '<C-\\><C-n>')
 
@@ -72,5 +75,14 @@ wk.register({
         name = "Telescope",
         a = { "<cmd>lua require('telescope.builtin').lsp_code_actions()<CR>", "Code actions" },
         g = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "Git commits" },
-    }
+    },
+    ["åu"] = {
+        name = "UI",
+        t = { "<cmd>NeoTreeShowToggle<CR>", "Toggle filetree" },
+        m = {
+            name = "Mouse",
+            e = { "<cmd>set mouse=a<cr>", "Enable mouse" },
+            d = { "<cmd>set mouse=<cr>", "Disable mouse" }
+        },
+    },
 })

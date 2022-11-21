@@ -18,6 +18,8 @@
       # Editor files (just in case)
       ".vscode"
       ".idea"
+      # Build systems
+      "jdtls-workspace"
     ];
   };
 }

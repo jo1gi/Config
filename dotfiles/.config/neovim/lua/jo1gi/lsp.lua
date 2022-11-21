@@ -12,10 +12,10 @@ for _, lsp in ipairs(servers) do
     }
 end
 -- Java setup
-nvim_lsp.java_language_server.setup{
-    cmd = {"java-language-server"},
-    capabilities = capabilities,
-}
+-- nvim_lsp.java_language_server.setup{
+--     cmd = {"java-language-server"},
+--     capabilities = capabilities,
+-- }
 
 -- Improvements
 local saga = require('lspsaga')
