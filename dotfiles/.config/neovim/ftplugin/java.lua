@@ -1,4 +1,6 @@
-local workspace_dir = vim.fn.getcwd() .. 'jdtls-workspace'
+-- local workspace_dir = vim.fn.getcwd() .. '/jdtls-workspace'
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local workspace_dir = '/home/jo1gi/.local/share/jdtls-workspaces/' .. project_name
 
 local config = {
     cmd = {'jdt-language-server', '-data', workspace_dir},
