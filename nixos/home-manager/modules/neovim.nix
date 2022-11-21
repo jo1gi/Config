@@ -10,8 +10,7 @@ in
     programs.neovim = {
       extraConfig = ''
         set runtimepath^=/home/jo1gi/.config/neovim
-        set runtimepath^=/home/jo1gi/Projects/Vim/Org
-        lua require('jo1gi.main')
+        lua require('jo1gi')
         autocmd ColorScheme * call highlight#update()
         colorscheme base16-gruvbox-dark-medium
         set mouse=""

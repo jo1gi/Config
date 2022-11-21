@@ -18,7 +18,7 @@ nmap("<C-s>", "<cmd>w<CR>")
 imap("<C-s>", "<cmd>w<CR>")
 
 -- Configs
-nmap("<leader>cf", "<cmd>execute \"edit /home/jo1gi/Projects/nixos/home/configs/neovim/old/ftplugin/\" . &filetype . \".vim\"<CR>")
+nmap("<leader>cf", "<cmd>execute \"edit /home/jo1gi/.config/neovim/ftplugin/\" . &filetype . \".vim\"<CR>")
 nmap("<leader>cy", "<cmd>UltiSnipsEdit<CR>")
 
 -- Conjure
@@ -44,6 +44,10 @@ wk.register({
         s = {
             "<cmd>execute \"edit \" . \"/home/jo1gi/.config/neovim/snippets/\" . &filetype . \".snippets\"<CR>",
             "Edit Snippets"
+        },
+        f = {
+            "<cmd>execute \"edit /home/jo1gi/.config/neovim/ftplugin/\" . &filetype . \".vim\"<CR>",
+            "Edit filetype config"
         },
     },
     ["ål"] = {

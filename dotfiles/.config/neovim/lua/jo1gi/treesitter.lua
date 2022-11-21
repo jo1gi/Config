@@ -4,7 +4,7 @@ require('nvim-treesitter.configs').setup {
     -- Plugins
     highlight = {
         enable = true,
-        disable = {"nix","tex"},
+        disable = {"nix","tex","latex"},
     },
     indent = {
         enable = true

@@ -30,7 +30,7 @@ opt.wrap = true
 opt.linebreak = true
 
 -- Conceal
-opt.conceallevel = 2
+opt.conceallevel = 0
 opt.concealcursor = "n"
 
 -- Folding
