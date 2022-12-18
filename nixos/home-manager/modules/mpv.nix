@@ -7,10 +7,11 @@
       hwdec = "auto-safe";
       profile = "gpu-hq";
       ytdl-format = "best[height<=720]";
+      osc = "no";
     };
-    scripts = [
-      pkgs.mpvScripts.sponsorblock
+    scripts = with pkgs.mpvScripts; [
+      sponsorblock
+      thumbnail
     ];
   };
 }
-
