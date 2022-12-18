@@ -12,6 +12,7 @@
       cookies-txt
       keepassxc-browser
       redirector
+      sponsorblock
     ];
     profiles = {
       standard = {
@@ -27,9 +28,9 @@
           "browser.aboutConfig.showWarning" = false;
           "browser.download.dir" = "/home/jo1gi/Downloads/Browser";
           # Theming
-          "browser.compactmode.show" = true;
-          "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
-          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+          "browser.compactmode.show" = true; # Compact theme
+          "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org"; # Dark theme
+          "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable custom css
         };
         userChrome = ''
           #titlebar {

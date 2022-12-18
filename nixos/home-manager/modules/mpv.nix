@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.mpv = {
@@ -8,6 +8,9 @@
       profile = "gpu-hq";
       ytdl-format = "best[height<=720]";
     };
+    scripts = [
+      pkgs.mpvScripts.sponsorblock
+    ];
   };
 }
 
