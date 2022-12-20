@@ -63,6 +63,9 @@
     gentium
 	];
 
+  # Udisk
+  services.udisks2.enable = true;
+
   security.pki.certificateFiles = [
     home-manager/assets/mailserver.crt
   ];
@@ -72,6 +75,7 @@
     ./homemanager.nix
 
     ./modules/desktops.nix
+    ./modules/distrobox.nix
     ./modules/games.nix
     ./modules/general.nix
     ./modules/laptop.nix
