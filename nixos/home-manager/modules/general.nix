@@ -7,11 +7,15 @@
       programming.enable = true;
     };
 
+    programs = {
+      thunderbird.enable = true;
+    };
+
     home.packages = with pkgs; [
       # Applications
+      calibre
       libreoffice
       keepassxc
-      thunderbird
       newsboat
       tremc
 

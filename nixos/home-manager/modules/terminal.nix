@@ -11,7 +11,9 @@
       bat.enable      = true;
       exa.enable      = true;
       git.enable      = true;
-      neomutt.enable  = true;
+      mbsync.enable   = false;
+      neomutt.enable  = false;
+      notmuch.enable  = false;
       ssh.enable      = true;
       starship.enable = true;
       zsh.enable      = true;
@@ -47,7 +49,7 @@
       imagemagick
       pandoc
       graphviz
-      (texlive.combine { inherit (texlive) scheme-full; inherit dnd-latex-template; } )
+      (texlive.combine { inherit (texlive) scheme-full;} )
       unzip
       zip
       unrar
@@ -69,7 +71,7 @@
       pinentry
       git-crypt
 
-      nur.repos.j-k.hasklig-nerdfont
+      # nur.repos.j-k.hasklig-nerdfont
     ];
   };
 
