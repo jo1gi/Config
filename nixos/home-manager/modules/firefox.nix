@@ -18,6 +18,9 @@
       standard = {
         name = "Standard";
         isDefault = true;
+        search = {
+          default = "DuckDuckGo";
+        };
         settings = {
           # Search
           "browser.search.region" = "DK";
