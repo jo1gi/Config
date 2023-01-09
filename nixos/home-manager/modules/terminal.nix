@@ -33,21 +33,19 @@
       # Applications
       libqalculate
       vifm-full
-      amfora
-      tmux
       ncdu
 
       # Syncronization
       rclone
       stow
-      megacmd
 
       # File manipulation
       ffmpeg
       imagemagick
       pandoc
       graphviz
-      (texlive.combine { inherit (texlive) scheme-full; inherit dnd-latex-template; } )
+      # (texlive.combine { inherit (texlive) scheme-small; inherit dnd-latex-template; } )
+      tectonic
       unzip
       zip
       unrar
@@ -68,8 +66,6 @@
       gnupg1
       pinentry
       git-crypt
-
-      nur.repos.j-k.hasklig-nerdfont
     ];
   };
 
