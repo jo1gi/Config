@@ -12,16 +12,16 @@
       AUDIBLE_CONFIG_DIR = "/home/jo1gi/.config/audible";
     };
     plugins = [
-      {
-        name = "zsh-nix-shell";
-        file = "nix-shell.plugin.zsh";
-        src = pkgs.fetchFromGitHub {
-          owner = "chisui";
-          repo = "zsh-nix-shell";
-          rev = "v0.5.0";
-          sha256 = "1gfyrgn23zpwv1vj37gf28hf5z0ka0w5qm6286a7qixwv7ijnrx9";
-        };
-      }
+      # {
+      #   name = "zsh-nix-shell";
+      #   file = "nix-shell.plugin.zsh";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "chisui";
+      #     repo = "zsh-nix-shell";
+      #     rev = "v0.5.0";
+      #     sha256 = "1gfyrgn23zpwv1vj37gf28hf5z0ka0w5qm6286a7qixwv7ijnrx9";
+      #   };
+      # }
     ];
     initExtra = "
       # Edit current command in editor

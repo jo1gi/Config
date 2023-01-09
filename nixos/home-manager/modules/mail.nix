@@ -14,6 +14,7 @@
           "@joakimholm.xyz"
         ];
         passwordCommand = "cat ~/.config/mailpassword";
+        # Server config
         imap = {
           host = "joakimholm.xyz";
           port = 993;
@@ -27,22 +28,23 @@
           port = 465;
           tls.enable = true;
         };
+        # Program config
         mbsync = {
-          enable = true;
+          enable = config.programs.mbsync.enable;
           create = "both";
         };
         neomutt = {
-          enable = config.personal.terminal.enable;
+          enable = config.programs.neomutt.enable;
           extraMailboxes = [
             "Drafts" "Junk" "Notifikationer" "Sent" "Shopping" "Spejder" "Trash" "Uni"
           ];
         };
-        notmuch.enable = true;
+        notmuch.enable = config.programs.notmuch.enable;
+        thunderbird.enable = config.programs.thunderbird.enable;
       };
     };
   };
   programs = {
-    mbsync.enable = true;
     neomutt = {
       editor = lib.mkIf config.programs.neovim.enable "nvim";
       vimKeys = false;
@@ -75,7 +77,13 @@
         color indicator default lightblack
       '';
     };
-    notmuch.enable = true;
+    thunderbird = {
+      profiles = {
+        joakimholm = {
+          isDefault = true;
+        };
+      };
+    };
   };
 
   # Setup imapfilter

@@ -11,7 +11,9 @@
       bat.enable      = true;
       exa.enable      = true;
       git.enable      = true;
-      neomutt.enable  = true;
+      mbsync.enable   = false;
+      neomutt.enable  = false;
+      notmuch.enable  = false;
       ssh.enable      = true;
       starship.enable = true;
       zsh.enable      = true;
