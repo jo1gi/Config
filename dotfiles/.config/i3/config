@@ -16,7 +16,7 @@ set $menu bemenu-run --nb "#282828" --ab "#282828" --fb "#282828" --hb "#282828"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-exec feh --bg-scale /home/jo1gi/.config/wallpapers/gruvbox-dark.png
+exec feh --no-fehbg --bg-scale /home/jo1gi/.config/wallpapers/gruvbox-dark.png
 ### Key bindings
 #
 # Basics:
