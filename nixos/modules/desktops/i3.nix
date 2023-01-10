@@ -16,6 +16,7 @@
     };
     users.users.jo1gi.packages = with pkgs; [
       bemenu
+      feh
     ];
   };
 }
