@@ -20,6 +20,7 @@
         isDefault = true;
         search = {
           default = "DuckDuckGo";
+          force = true; # Force replace search file
         };
         settings = {
           # Search
