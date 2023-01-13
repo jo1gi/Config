@@ -12,5 +12,6 @@
     dnd-latex-template.pkgs = [ (import ./derivations/texlive-dnd.nix) ];
     pybase16 = import ./derivations/pybase16.nix;
     base16-themes = import ./derivations/base16-themes.nix;
+    godotMono = pkgs.callPackage ./derivations/godot_mono.nix {};
   })];
 }
