@@ -20,6 +20,7 @@
         isDefault = true;
         search = {
           default = "DuckDuckGo";
+          force = true; # Force replace search file
         };
         settings = {
           # Search
@@ -29,7 +30,7 @@
           "extensions.pocket.enabled" = false;
           # Misc
           "browser.aboutConfig.showWarning" = false;
-          "browser.download.dir" = "/home/jo1gi/Downloads/Browser";
+          "browser.download.dir" = "${config.home.homeDirectory}/Downloads/Browser";
           # Theming
           "browser.compactmode.show" = true; # Compact theme
           "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org"; # Dark theme

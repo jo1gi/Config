@@ -6,11 +6,6 @@
     enableAutosuggestions = true;
     autocd = true;
     dotDir = ".config/zsh";
-    sessionVariables = {
-      EDITOR = "nvim";
-      # Cleanup variables
-      AUDIBLE_CONFIG_DIR = "/home/jo1gi/.config/audible";
-    };
     plugins = [
       # {
       #   name = "zsh-nix-shell";

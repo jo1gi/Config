@@ -14,8 +14,10 @@
     home.packages = with pkgs; [
       # Applications
       calibre
-      libreoffice
+      gimp
+      inkscape
       keepassxc
+      libreoffice
       newsboat
       tremc
 

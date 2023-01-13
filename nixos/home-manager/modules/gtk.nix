@@ -11,10 +11,10 @@
     gtk3 = {
       # File manager bookmarks
       bookmarks = [
-        "file:///home/jo1gi/Documents/Books"
-        "file:///home/jo1gi/Documents"
-        "file:///home/jo1gi/Downloads"
-        "file:///home/jo1gi/Games"
+        "file://${config.home.homeDirectory}/Documents/Books"
+        "file://${config.home.homeDirectory}/Documents"
+        "file://${config.home.homeDirectory}/Downloads"
+        "file://${config.home.homeDirectory}/Games"
       ];
 
       extraConfig = {
