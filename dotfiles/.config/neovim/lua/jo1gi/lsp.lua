@@ -5,12 +5,13 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Language setup
-servers = { "clojure_lsp", "gopls", "nimls", "pyright", "rust_analyzer", "metals" }
+servers = { "clojure_lsp", "gopls", "pylsp", "nimls", "rust_analyzer", "metals" }
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         capabilities = capabilities,
     }
 end
+
 -- Java setup
 -- nvim_lsp.java_language_server.setup{
 --     cmd = {"java-language-server"},
