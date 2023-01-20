@@ -8,7 +8,6 @@ in
 {
   config.home.packages = with pkgs; lib.mkIf config.personal.scripting.enable [
     unstable.babashka
-    nodePackages.pyright
     (python3.withPackages(ps: with ps; [
       pip
       setuptools
@@ -20,6 +19,7 @@ in
       distro
       pyyaml
       pycrypto
+      pylsp-mypy
     ]))
     lua5_3
   ];
