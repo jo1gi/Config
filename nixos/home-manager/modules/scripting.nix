@@ -20,6 +20,10 @@ in
       pyyaml
       pycrypto
       pylsp-mypy
+
+      # Numerisk lineær algebra
+      numpy
+      matplotlib
     ]))
     lua5_3
   ];
