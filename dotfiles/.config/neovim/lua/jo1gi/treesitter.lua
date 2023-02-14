@@ -1,10 +1,10 @@
 require('nvim-treesitter.configs').setup {
     parser_install_dir = "~/.local/share/nvim/tree-sitter/",
-    ensure_installed = {"python", "rust", "java", "haskell", "clojure", "scheme"},
     -- Plugins
     highlight = {
         enable = true,
-        disable = {"nix","tex","latex","scala"},
+        disable = {"nix","tex","latex","scala", "bash"},
+        additional_vim_regex_highlighting = { "markdown" },
     },
     indent = {
         enable = true
