@@ -62,6 +62,7 @@
     games.enable = true;
     general.enable = true;
     school.enable = true;
+    vm.enable = true;
     work.enable = true;
   };
   home-manager.users.jo1gi.config.personal = {
