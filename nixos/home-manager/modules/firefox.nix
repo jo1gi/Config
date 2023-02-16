@@ -35,6 +35,8 @@
           "browser.compactmode.show" = true; # Compact theme
           "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org"; # Dark theme
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable custom css
+          # Privacy
+          "privacy.resistFingerprinting" = true;
         };
         userChrome = ''
           #titlebar {
