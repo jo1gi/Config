@@ -1,0 +1,11 @@
+snippet class "Class"
+	$1[label=<<b>$2</b>>,shape=box]
+
+snippet interface "Interface"
+  $1[label=<{«Interface»<br/><b>$2</b>|$3}>,shape=record]
+
+snippet impl "Implements"
+	$1 -> $2[style=dotted,arrowhead=empty]
+
+snippet comp "Composition"
+	$1 -> $2[arrowhead=odiamond]

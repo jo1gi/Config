@@ -6,3 +6,18 @@ snippet shell
 			$0
 		];
 	}
+
+snippet rust-nightly
+	with import <nixpkgs> {
+		overlays = map (uri: import (fetchTarball uri)) [
+			https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz
+		];
+	};
+
+	stdenv.mkDerivation {
+		name = "$1";
+		buildInputs = [
+			nixpkgs.latest.rustChannels.nightly.rust
+			$0
+		];
+	}
