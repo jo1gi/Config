@@ -54,7 +54,6 @@
       imagemagick
       pandoc
       graphviz
-      # (texlive.combine { inherit (texlive) scheme-small; inherit dnd-latex-template; } )
       tectonic
       unzip
       zip
