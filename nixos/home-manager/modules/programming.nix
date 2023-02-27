@@ -29,7 +29,6 @@
       nimlsp
       nim
       chicken
-      godotMono
     ];
     programs.zsh.sessionVariables = {
       ANDROID_JAVA_HOME = pkgs.jdk.home;

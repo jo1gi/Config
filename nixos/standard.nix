@@ -75,7 +75,6 @@
     ./homemanager.nix
 
     ./modules/desktops.nix
-    ./modules/distrobox.nix
     ./modules/games.nix
     ./modules/general.nix
     ./modules/laptop.nix

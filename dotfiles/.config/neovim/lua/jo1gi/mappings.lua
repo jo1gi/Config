@@ -1,10 +1,10 @@
 local function map(mode, keys, cmd)
-	local options = {noremap = true}
-	vim.api.nvim_set_keymap(mode, keys, cmd, options)
+    local options = {noremap = true}
+    vim.api.nvim_set_keymap(mode, keys, cmd, options)
 end
 
 local function nmap(keys, cmd)
-	map("n", keys, cmd)
+    map("n", keys, cmd)
 end
 
 local function imap(keys, cmd)
@@ -56,8 +56,8 @@ wk.register({
     ["ål"] = {
         name = "LSP",
         a = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
-        d = { "<cmd>lua vim.diagnostic.open_float(nil, {focus=false})<CR>", "Diagnostics window" },
-        g = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Goto definition" },
+        d = { function() vim.diagnostic.open_float(nil, {focus=false}) end, "Diagnostics window" },
+        g = { function() vim.lsp.buf.definition() end, "Goto definition" },
         h = { "<cmd>Lspsaga hover_doc<CR>", "Hover Documentation" },
         -- h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover documentation" },
         r = { "<cmd>Lspsaga rename<CR>" ,"Rename" },
@@ -73,8 +73,8 @@ wk.register({
     },
     ["åt"] = {
         name = "Telescope",
-        a = { "<cmd>lua require('telescope.builtin').lsp_code_actions()<CR>", "Code actions" },
-        g = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "Git commits" },
+        a = { function() require('telescope.builtin').lsp_code_actions() end, "Code actions" },
+        g = { function() require('telescope.builtin').git_commits() end, "Git commits" },
     },
     ["åu"] = {
         name = "UI",

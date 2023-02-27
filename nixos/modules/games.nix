@@ -9,7 +9,6 @@
     hardware.pulseaudio.support32Bit = true;
     environment.systemPackages = with pkgs; [
       # Applications
-      discord
       lutris
       wineWowPackages.stable
 
