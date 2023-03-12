@@ -31,6 +31,8 @@
           # Misc
           "browser.aboutConfig.showWarning" = false;
           "browser.download.dir" = "${config.home.homeDirectory}/Downloads/Browser";
+          "signon.rememberSignons" = false;
+          "browser.formfill.enable" = false;
           # Theming
           "browser.compactmode.show" = true; # Compact theme
           "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org"; # Dark theme
