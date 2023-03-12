@@ -26,6 +26,7 @@ in
       matplotlib
     ]))
     lua5_3
+    ruby
   ];
 
   options.personal.scripting = with lib; {
