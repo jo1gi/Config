@@ -40,6 +40,9 @@ opt.foldlevel = 1
 -- Searching
 opt.smartcase = true
 
+-- Spelling
+opt.spell = false
+
 -- Deoplete
 g["deoplete#enable_at_startup"] = 1
 
@@ -63,6 +66,7 @@ g["UltiSnipsJumpBackwardTrigger"] = "<c-z>"
 g["conjure#filetype#fennel"] = "conjure.client.fennel.stdio"
 g["conjure#client#scheme#stdio#command"] = "csi -quiet -:c"
 g["conjure#client#scheme#stdio#prompt_pattern"] = "\n-#;%d-> "
+g['conjure#extract#tree_sitter#enabled'] = true
 
 -- Telescope
 require("telescope").setup {
