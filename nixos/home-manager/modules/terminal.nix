@@ -31,6 +31,7 @@
     home.sessionPath = [
       "$HOME/.bin"
       "$HOME/.local/bin"
+      "$HOME/.local/share/gem/ruby/2.7.0/bin"
     ];
 
     # Universal shell aliases
