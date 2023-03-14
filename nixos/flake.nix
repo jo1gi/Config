@@ -26,6 +26,10 @@
         system = "x86_64-linux";
         modules = [ ./system/devices/lenovo.nix ];
       };
+      mailserver = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./system/devices/mailserver.nix ];
+      };
     };
 
     homeConfigurations = {
