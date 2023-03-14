@@ -18,6 +18,10 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
   {
     nixosConfigurations = {
+      desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./system/devices/desktop.nix ];
+      };
       lenovo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./system/devices/lenovo.nix ];
@@ -25,6 +29,11 @@
     };
 
     homeConfigurations = {
+      desktop = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./home/devices/desktop.nix ];
+      };
       lenovo = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };

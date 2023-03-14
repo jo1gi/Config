@@ -2,16 +2,16 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [
+    ./exa.nix
+    ./git.nix
+    ./starship.nix
+    ./zsh.nix
+  ];
   config = lib.mkIf config.jo1gi.terminal.enable {
     # Enable scripting languages like python and lua
     jo1gi.scripting.enable = true;
 
-    imports = [
-      ./exa.nix
-      ./git.nix
-      ./starship.nix
-      ./zsh.nix
-    ];
 
     # Programs with home-manager configs
     programs = {

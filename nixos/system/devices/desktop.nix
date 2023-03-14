@@ -1,4 +1,4 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
   imports = [
@@ -9,15 +9,17 @@
   ];
 
   # Kernel
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod" "msr" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "msr" ];
-  boot.extraModulePackages = [ ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+  boot.kernelModules = [ "kvm-intel" ];
 
-	fileSystems."/home" = {
-		device = "/dev/disk/by-uuid/46e9b15b-7bd2-4d51-a138-ab597fa891fe";
-		fsType = "ext4";
-	};
+  fileSystems."/home/jo1gi/Storage" = {
+    device = "/dev/disk/by-uuid/1561e449-f074-43c0-b931-923b1ee44831";
+    fsType = "ext4";
+  };
+
+  # CPU
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # Misc
   networking.hostName = "desktop";
