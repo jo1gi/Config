@@ -20,6 +20,7 @@
       libreoffice
       newsboat
       tremc
+      qbittorrent
 
       # Other
       jdk
