@@ -1,0 +1,58 @@
+#!/usr/bin/env bb
+; vim: ft=clojure
+
+; Imports
+(require '[clojure.string :as str]
+         '[babashka.process :as p])
+
+; Helper variables
+(def home (str (System/getenv "HOME") "/"))
+
+; Helper functions
+(defn device-to-string [{remote :remote path :path}]
+  (cond
+    (= remote :local) (str (System/getenv "HOME") "/" path)
+    :else (str remote ":" path)))
+
+(defn vec-if-not-vec [x]
+  (if (vector? x) x [x]))
+
+(defn mapping-to-command [[x y]]
+  (let [origin (device-to-string x)
+        destination (device-to-string y)]
+    (str "rclone sync -P " origin " " destination)))
+
+(defn create-mappings [{from :from to :to}]
+  (let [from (vec-if-not-vec from)
+        to (vec-if-not-vec to)]
+    (->> from
+         (map (fn [x] (map (fn [y] [x y]) to)))
+         (apply concat)
+         )))
+
+(defn run-command [[x y]]
+  (println "Uploading" (device-to-string x) "to" (device-to-string y))
+  (p/shell (mapping-to-command [x y]))
+  (println))
+
+(defn backup [& x]
+  (->> x
+       (map create-mappings)
+       (apply concat)
+       (run! run-command)))
+
+; Sync
+(backup
+ {
+  :from {:remote :local :path "Documents/Books"}
+  :to [{:remote "AU" :path "Bøger"}
+       {:remote "Mega" :path "Books"}]
+  }
+ {
+  :from {:remote :local :path "Documents/Other"}
+  :to {:remote "Mega" :path "Documents/Other"}
+  }
+ {
+  :from {:remote :local :path "Documents/School"}
+  :to {:remote "Mega" :path "Documents/School"}
+ })

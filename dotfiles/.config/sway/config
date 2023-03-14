@@ -250,3 +250,4 @@ client.unfocused #282828 #282828 #d5c4a1 #b8bb26 #282828
 # Window Rules:
 #
 for_window [window_role="pop-up"] floating enable
+

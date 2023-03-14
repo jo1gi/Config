@@ -3,3 +3,5 @@
   subrules:
     - domain: youtube.com
       command: mpv --speed=2.5
+    - domain: twitter.com
+      redirect: "https://nitter.net/{PATH}"
