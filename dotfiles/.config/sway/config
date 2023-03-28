@@ -80,12 +80,12 @@ input "type:keyboard" {
     bindsym mod1+Space exec $menu
 
     # Sound modifier
-    bindsym XF86AudioRaiseVolume exec pamixer --allow-boost -i 5
-    bindsym XF86AudioLowerVolume exec pamixer --allow-boost -d 5
+    bindsym XF86AudioRaiseVolume exec pamixer --allow-boost -i 2
+    bindsym XF86AudioLowerVolume exec pamixer --allow-boost -d 2
 
     # Brightness modifier
-    bindsym XF86MonBrightnessUp exec light -A 5
-    bindsym XF86MonBrightnessDown exec light -U 5
+    bindsym XF86MonBrightnessUp exec light -A 3
+    bindsym XF86MonBrightnessDown exec light -U 3
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
