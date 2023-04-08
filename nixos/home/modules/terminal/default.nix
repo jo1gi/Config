@@ -82,6 +82,7 @@
       gnupg1
       pinentry
       git-crypt
+      just
     ];
   };
 

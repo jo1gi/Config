@@ -52,6 +52,7 @@
         Coqtail
         neorg
         vim-racket
+        vim-mustache-handlebars
         (pkgs.vimUtils.buildVimPlugin {
           pname = "vim-crystal";
           version = "1";
@@ -60,6 +61,16 @@
             repo = "vim-crystal";
             rev = "a760ad003e14c800a5e53bf2631f51280353883c";
             sha256 = "sha256-vhwxu7h/Gf5JFhNzbO6SxaaX6MHq0doQ96UO0N0vIb0=";
+          };
+        })
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "just.vim";
+          version = "1";
+          src = pkgs.fetchFromGitHub {
+            owner = "tmccombs";
+            repo = "just.vim";
+            rev = "54188993a7c11943f2a763337a017d0e3191bd0c";
+            sha256 = "sha256-9zVyZa6jHXj86SMAlqlL8C4xGBFdYIr/eEHHdQpFPTw=";
           };
         })
         (nvim-treesitter.withPlugins(_: pkgs.tree-sitter.allGrammars))
