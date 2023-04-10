@@ -33,6 +33,7 @@
     ./modules/programming.nix
     ./modules/scripting.nix
     ./modules/school.nix
+    ./modules/sway.nix
     ./modules/terminal/default.nix
     ./modules/vscode.nix
     ./modules/windowmanager.nix
