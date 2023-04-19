@@ -34,12 +34,12 @@ exec feh --no-fehbg --bg-scale /home/jo1gi/.config/wallpapers/gruvbox-dark.png
     bindsym mod1+space exec $menu
 
     # Sound modifier
-    bindsym XF86AudioRaiseVolume exec pamixer --allow-boost -i 5
-    bindsym XF86AudioLowerVolume exec pamixer --allow-boost -d 5
+    bindsym XF86AudioRaiseVolume exec pamixer --allow-boost -i 2
+    bindsym XF86AudioLowerVolume exec pamixer --allow-boost -d 2
 
     # Brightness modifier
-    bindsym XF86MonBrightnessUp exec light -A 5
-    bindsym XF86MonBrightnessDown exec light -U 5
+    bindsym XF86MonBrightnessUp exec light -A 2
+    bindsym XF86MonBrightnessDown exec light -U 2
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -107,8 +107,8 @@ exec feh --no-fehbg --bg-scale /home/jo1gi/.config/wallpapers/gruvbox-dark.png
 
     # Relative movement
     # bindsym Ctrl+Mod1+Right exec swaymsg workspace number $(swaymsg -t get_workspaces | jq '.[] | select(.focused == true) | (.num % 10) + 1')
-    bindsym Ctrl+Mod1+Right workspace next
-    bindsym Ctrl+Mod1+Left workspace prev
+    bindsym Ctrl+Mod1+Right workspace next_on_output
+    bindsym Ctrl+Mod1+Left workspace prev_on_output
 
     # Disable laptop screen
     bindsym $mod+mod1+l output eDP-1 toggle
@@ -204,3 +204,6 @@ client.unfocused #282828 #282828 #d5c4a1 #b8bb26 #282828
 # Window Rules:
 #
 for_window [window_role="pop-up"] floating enable
+assign [class="qBittorrent"] torrent
+assign [class="thunderbird"] mail
+assign [class="KeePassXC"] password
