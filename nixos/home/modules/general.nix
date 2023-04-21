@@ -2,18 +2,19 @@
 
 {
   config = lib.mkIf config.jo1gi.general.enable {
+
     jo1gi = {
       terminal.enable = true;
       programming.enable = true;
     };
 
     programs = {
+      firefox.enable = true;
       thunderbird.enable = true;
     };
 
     home.packages = with pkgs; [
       # Applications
-      calibre
       gimp
       inkscape
       keepassxc
@@ -21,12 +22,6 @@
       newsboat
       tremc
       qbittorrent
-
-      # Other
-      jdk
-
-      # Services
-      transmission
     ];
   };
 
@@ -34,4 +29,5 @@
     type = lib.types.bool;
     default = false;
   };
+
 }

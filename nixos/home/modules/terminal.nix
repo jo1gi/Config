@@ -2,16 +2,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [
-    ./exa.nix
-    ./git.nix
-    ./starship.nix
-    ./zsh.nix
-  ];
   config = lib.mkIf config.jo1gi.terminal.enable {
-    # Enable scripting languages like python and lua
-    jo1gi.scripting.enable = true;
-
 
     # Programs with home-manager configs
     programs = {
@@ -67,7 +58,6 @@
       zip
       binutils
       pdftk
-      age
 
       # Misc
       ripgrep # Seach tool like grep
@@ -78,10 +68,6 @@
       jq # Json cli tool
       file # Info about file
       hledger # Personal finance
-      speedtest-cli # Speedtest cli
-      gnupg1
-      pinentry
-      git-crypt
       just
       asciidoctor
     ];

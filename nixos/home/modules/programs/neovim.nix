@@ -39,10 +39,8 @@
         lspsaga-nvim # Extra lsp capabilities
         lspkind-nvim # Images for lsp completion
         trouble-nvim # Inline diagnostics
-        nvim-jdtls # Java lsp
 
         vim-nix
-        fennel-vim
         vim-ledger
         vim-jinja
         vim-toml

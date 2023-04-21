@@ -20,22 +20,24 @@
   };
 
   imports = [
-    ./modules/alacritty.nix
     ./modules/base16.nix
-    ./modules/emacs.nix
-    ./modules/firefox.nix
+    ./modules/desktops/sway.nix
     ./modules/general.nix
     ./modules/gtk.nix
     ./modules/mail.nix
     ./modules/mpd.nix
-    ./modules/mpv.nix
-    ./modules/neovim.nix
-    ./modules/programming.nix
-    ./modules/scripting.nix
-    ./modules/school.nix
-    ./modules/sway.nix
-    ./modules/terminal/default.nix
-    ./modules/vscode.nix
+    ./modules/programming/mod.nix
+    ./modules/programs/alacritty.nix
+    ./modules/programs/emacs.nix
+    ./modules/programs/exa.nix
+    ./modules/programs/firefox.nix
+    ./modules/programs/git.nix
+    ./modules/programs/mpv.nix
+    ./modules/programs/neovim.nix
+    ./modules/programs/starship.nix
+    ./modules/programs/vscode.nix
+    ./modules/programs/zsh.nix
+    ./modules/terminal.nix
     ./modules/windowmanager.nix
   ];
 }

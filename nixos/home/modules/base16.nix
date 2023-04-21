@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, config, lib, ... }:
 
 {
 
@@ -15,6 +15,11 @@
       fontName = config.jo1gi.terminal.font;
       fontSize = config.jo1gi.terminal.fontsize;
     };
+  };
+
+  options.themes.wallpaper = lib.mkOption {
+    type = lib.types.path;
+    default = ../../../dotfiles/.config/wallpapers/gruvbox-dark.png;
   };
 
 }

@@ -1,9 +1,9 @@
-{ config, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  programs.git = {
+  config.programs.git = {
     userName = "Joakim Holm";
-    userEmail = "joakimholm@protonmail.com";
+    userEmail = "mail@joakimholm.xyz";
     extraConfig = {
       init = {
         defaultBranch = "master";
@@ -22,4 +22,8 @@
       "jdtls-workspace"
     ];
   };
+
+  config.home.packages = lib.mkIf config.programs.git.enable [
+    pkgs.git-crypt
+  ];
 }
