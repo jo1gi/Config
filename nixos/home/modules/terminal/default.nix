@@ -83,6 +83,7 @@
       pinentry
       git-crypt
       just
+      asciidoctor
     ];
   };
 

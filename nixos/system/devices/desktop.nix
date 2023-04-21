@@ -6,6 +6,8 @@
     ../modules/groups/games.nix
     ../modules/groups/pc.nix
     ../modules/hardware/graphics/nvidia.nix
+    ../modules/services/distrobox.nix
+    ../modules/services/yggdrasil.nix
   ];
 
   # Kernel
