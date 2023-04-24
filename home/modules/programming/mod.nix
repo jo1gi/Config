@@ -4,6 +4,7 @@
   imports = [
     ./android.nix
     ./java.nix
+    ./kotlin.nix
     ./python.nix
     ./rust.nix
     ./haxe.nix
@@ -52,6 +53,10 @@
       default = false;
     };
     java.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+    kotlin.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
     };

@@ -5,6 +5,7 @@
 
     home.packages = with pkgs; [
       gradle
+      gradle-completion
       jdk
       jdt-language-server
     ];
