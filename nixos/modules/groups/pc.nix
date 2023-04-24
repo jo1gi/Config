@@ -45,7 +45,7 @@
 
   # Mail certificate
   security.pki.certificateFiles = [
-    ../../../home/assets/mailserver.crt
+    ../../../assets/mailserver.crt
   ];
 
   # Globally available packages

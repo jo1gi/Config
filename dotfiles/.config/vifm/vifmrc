@@ -199,6 +199,8 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \<video/*>
          \ ffprobe -pretty %c 2>&1
 
+filextype {*.epub} ebook-viewer
+
 " Web
 filextype {*.html,*.htm},<text/html>
         \ {Open with dwb}

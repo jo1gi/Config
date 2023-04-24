@@ -9,11 +9,14 @@
       bat.enable      = true;
       exa.enable      = true;
       git.enable      = true;
+      hledger.enable  = true;
+      myjust.enable   = true;
       mbsync.enable   = false;
       neomutt.enable  = false;
       notmuch.enable  = false;
       ssh.enable      = true;
       starship.enable = true;
+      vifm.enable     = true;
       zsh.enable      = true;
       zoxide.enable   = true;
     };
@@ -41,7 +44,6 @@
     home.packages = with pkgs; [
       # Applications
       libqalculate
-      vifm-full
       ncdu
 
       # Syncronization
@@ -67,8 +69,6 @@
       openurl # Url opening tool
       jq # Json cli tool
       file # Info about file
-      hledger # Personal finance
-      just
       asciidoctor
     ];
   };

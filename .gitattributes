@@ -1,3 +1,3 @@
 dotfiles/.config/newsboat/urls filter=git-crypt diff=git-crypt
 dotfiles/.config/mailpassword filter=git-crypt diff=git-crypt
-nixos/system/modules/services/syncthing.nix filter=git-crypt diff=git-crypt
+nixos/modules/services/syncthing.nix filter=git-crypt diff=git-crypt

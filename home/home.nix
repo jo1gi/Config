@@ -32,6 +32,9 @@
     ./modules/programs/exa.nix
     ./modules/programs/firefox.nix
     ./modules/programs/git.nix
+    ./modules/programs/hledger.nix
+    ./modules/programs/just.nix
+    ./modules/programs/vifm.nix
     ./modules/programs/mpv.nix
     ./modules/programs/neovim.nix
     ./modules/programs/starship.nix

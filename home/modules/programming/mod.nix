@@ -6,6 +6,7 @@
     ./java.nix
     ./python.nix
     ./rust.nix
+    ./haxe.nix
   ];
 
   config = lib.mkIf config.jo1gi.programming.enable {
@@ -28,6 +29,7 @@
     jo1gi = {
       terminal.enable = true;
       programming = {
+        haxe.enable = true;
         java.enable = true;
         python.enable = true;
         rust.enable = true;
@@ -42,6 +44,10 @@
       default = false;
     };
     android.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+    haxe.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
     };

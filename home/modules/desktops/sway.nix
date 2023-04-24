@@ -7,6 +7,7 @@ let
   volumeChange = 2;
   brightnessChange = 2;
   mod = "Mod4";
+  swayEnabled = config.wayland.windowManager.sway.enable;
 in
   {
     config.wayland.windowManager.sway = {
@@ -184,5 +185,9 @@ in
         "password" = [{ app_id = "org.keepassxc.KeePassXC"; }];
       };
     };
+  };
+  config.home.file."${config.home.homeDirectory}/.local/bin/music" = lib.mkIf swayEnabled {
+    source = ../../../scripts/sway-music.sh;
+    executable = true;
   };
 }

@@ -20,7 +20,7 @@
           port = 993;
           tls = {
             enable = true;
-            certificatesFile = ../assets/mailserver.crt;
+            certificatesFile = ../../assets/mailserver.crt;
           };
         };
         smtp = {
@@ -94,5 +94,5 @@
   home.sessionVariables = {
     IMAPFILTER_HOME = "$HOME/.config/imapfilter";
   };
-  home.file.".config/imapfilter/certificates".source = ../assets/mailserver.crt;
+  home.file.".config/imapfilter/certificates".source = ../../assets/mailserver.crt;
 }

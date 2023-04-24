@@ -20,15 +20,15 @@
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./system/devices/desktop.nix ];
+        modules = [ ./nixos/devices/desktop.nix ];
       };
       lenovo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./system/devices/lenovo.nix ];
+        modules = [ ./nixos/devices/lenovo.nix ];
       };
       mailserver = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./system/devices/mailserver.nix ];
+        modules = [ ./nixos/devices/mailserver.nix ];
       };
     };
 

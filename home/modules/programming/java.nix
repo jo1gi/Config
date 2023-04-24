@@ -9,9 +9,11 @@
       jdt-language-server
     ];
 
-    programs.neovim.plugins = with pkgs.vimPlugins; [
-      nvim-jdtls
-    ];
+    programs.neovim = {
+      plugins = with pkgs.vimPlugins; [
+        nvim-jdtls
+      ];
+    };
 
   };
 }

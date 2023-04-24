@@ -23,5 +23,11 @@
       ]))
     ];
 
+    programs.neovim = {
+      extraLuaConfig = ''
+        require('jo1gi.helpers.setup_lsp')("pylsp")
+      '';
+    };
+
   };
 }
