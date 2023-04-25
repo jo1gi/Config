@@ -8,9 +8,6 @@
   config.jo1gi = {
     terminal.fontsize = 13;
     general.enable = true;
-    programming = {
-      android.enable = true;
-    };
     windowmanager.enable = true;
   };
 
