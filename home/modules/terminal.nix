@@ -23,10 +23,6 @@
 
     home.sessionVariables = {
       EDITOR = "nvim";
-      # Cleanup variables
-      AUDIBLE_CONFIG_DIR = "${config.home.homeDirectory}/.config/audible";
-      CARGO_HOME = "${config.home.homeDirectory}/.local/share/cargo";
-      LESSHISTFILE = "-";
     };
 
     home.sessionPath = [
