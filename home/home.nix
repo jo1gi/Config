@@ -21,11 +21,11 @@
 
   imports = [
     ./modules/base16.nix
+    ./modules/cleanup.nix
     ./modules/desktops/sway.nix
     ./modules/general.nix
     ./modules/gtk.nix
     ./modules/mail.nix
-    ./modules/mpd.nix
     ./modules/programming/mod.nix
     ./modules/programs/alacritty.nix
     ./modules/programs/emacs.nix
@@ -35,6 +35,7 @@
     ./modules/programs/hledger.nix
     ./modules/programs/just.nix
     ./modules/programs/vifm.nix
+    ./modules/programs/mpd.nix
     ./modules/programs/mpv.nix
     ./modules/programs/neovim.nix
     ./modules/programs/ssh.nix

@@ -1,12 +1,14 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
-  config = {
+  config = lib.mkIf config.services.mpd.enable {
     programs.ncmpcpp = {
       enable = true;
     };
+    home.packages = with pkgs; [
+      mpc-cli
+    ];
     services.mpd = {
-      enable = true;
       musicDirectory = builtins.toPath "${config.home.homeDirectory}/Music";
       extraConfig = ''
         audio_output {
