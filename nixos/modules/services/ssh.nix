@@ -3,6 +3,7 @@
 let
   authorizedKeys = [
     ../../../assets/public_keys/desktop.keys.pub
+    ../../../assets/public_keys/lenovo.keys.pub
   ];
 in
 {
@@ -10,6 +11,7 @@ in
     enable = true;
     permitRootLogin = "yes";
     passwordAuthentication = false;
+    gatewayPorts = "yes";
   };
 
   users.users.jo1gi = {

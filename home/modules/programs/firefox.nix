@@ -8,10 +8,9 @@
       sidebery
       noscript
       ublock-origin
-      cookies-txt
       keepassxc-browser
-      redirector
       sponsorblock
+      export-cookies-txt
     ];
     profiles = {
       standard = {

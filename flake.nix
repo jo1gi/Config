@@ -30,6 +30,10 @@
         system = "x86_64-linux";
         modules = [ ./nixos/devices/mailserver.nix ];
       };
+      hetzner = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        modules = [ ./nixos/devices/hetzner.nix ];
+      };
     };
 
     homeConfigurations = {
