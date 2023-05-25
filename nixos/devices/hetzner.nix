@@ -5,6 +5,7 @@
     (modulesPath + "/profiles/qemu-guest.nix")
     ../modules/groups/server.nix
     ../modules/services/syncthing.nix
+    ../modules/services/mail.nix
   ];
 
   # Boot
