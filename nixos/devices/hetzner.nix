@@ -1,10 +1,10 @@
-{ modulesPath, ... }:
+{ modulesPath, pkgs, lib, ... }:
 
 {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
     ../modules/groups/server.nix
-    # ../modules/services/transmission.nix
+    ../modules/services/syncthing.nix
   ];
 
   # Boot
@@ -24,6 +24,21 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/AC27-D9D6";
     fsType = "vfat";
+  };
+  system.fsPackages = [ pkgs.sshfs ];
+  fileSystems."/mnt/storagebox" = {
+    device = "u351753@u351753.your-storagebox.de:";
+    fsType = "sshfs";
+    options = [
+      "rw"
+      "nodev"
+      "noatime"
+      "allow_other"          # for non-root access
+      "max_read=65536"
+      # SSH options
+      "Port=23"
+      "IdentityFile=/var/secrets/storage-key"
+    ];
   };
 
   # Networking
@@ -61,5 +76,21 @@
   zramSwap.enable = true;
   networking.hostName = "hetzner";
   networking.domain = "";
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.11";
+  services.transmission = {
+    enable = true;
+    openPeerPorts = true;
+    openRPCPort = true;
+    settings = {
+      incomplete-dir = "/mnt/storagebox/torrents/incomplete";
+      download-dir = "/mnt/storagebox/torrents/download";
+    };
+    # home = "/home/jo1gi/transmission";
+    # settings = let
+    #   baseDir = "/mnt/storagebox/torrents";
+    # in {
+    #   incomplete-dir = "${baseDir}/incomplete";
+    #   download-dir = "${baseDir}/download";
+    # };
+  };
 }
