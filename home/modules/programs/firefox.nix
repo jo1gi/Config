@@ -92,6 +92,7 @@
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable custom css
           # Privacy
           "privacy.resistFingerprinting" = true;
+          "network.trr.mode" = 3; # Disallow unencrypted dns lookups
         };
         userChrome = ''
           #titlebar {
