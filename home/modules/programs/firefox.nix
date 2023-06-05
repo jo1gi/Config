@@ -17,7 +17,7 @@
         name = "Standard";
         isDefault = true;
         search = {
-          default = "Brave Search";
+          default = "DuckDuckGo";
           force = true; # Force replace search file
           engines = {
             "Arch Wiki" = {
