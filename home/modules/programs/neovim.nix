@@ -38,7 +38,7 @@
         vim-toml
         vim-mustache-handlebars
         nvim-treesitter
-        # (nvim-treesitter.withPlugins(_: pkgs.tree-sitter.allGrammars))
+        (nvim-treesitter.withPlugins(_: pkgs.tree-sitter.allGrammars))
         nvim-treesitter-textobjects
         nvim-ts-rainbow
 
