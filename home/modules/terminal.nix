@@ -45,6 +45,8 @@
       # Syncronization
       rclone
       stow
+      git-annex
+      git-annex-remote-rclone
 
       # File manipulation
       ffmpeg
