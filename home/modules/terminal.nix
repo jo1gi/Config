@@ -64,7 +64,7 @@
       entr # Run command on file update
       skim # Fuzzy finder
       yt-dlp # Video downloader
-      openurl # Url opening tool
+      # openurl # Url opening tool
       jq # Json cli tool
       file # Info about file
       asciidoctor

@@ -32,6 +32,7 @@
 		extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
 		shell = pkgs.zsh;
 	};
+  programs.zsh.enable = true;
 
   # Fonts
 	fonts.fonts = with pkgs; [
