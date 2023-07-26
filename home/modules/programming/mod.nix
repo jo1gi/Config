@@ -3,11 +3,12 @@
 {
   imports = [
     ./android.nix
+    ./go.nix
+    ./haxe.nix
     ./java.nix
     ./kotlin.nix
     ./python.nix
     ./rust.nix
-    ./haxe.nix
   ];
 
   config = lib.mkIf config.jo1gi.programming.enable {
@@ -30,6 +31,7 @@
     jo1gi = {
       terminal.enable = true;
       programming = {
+        go.enable = true;
         haxe.enable = true;
         java.enable = true;
         python.enable = true;
@@ -45,6 +47,10 @@
       default = false;
     };
     android.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+    go.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
     };

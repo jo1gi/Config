@@ -3,19 +3,19 @@
 
 {
   programs.firefox = {
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      multi-account-containers
-      sidebery
-      noscript
-      ublock-origin
-      keepassxc-browser
-      sponsorblock
-      export-cookies-txt
-    ];
     profiles = {
       standard = {
         name = "Standard";
         isDefault = true;
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          multi-account-containers
+          sidebery
+          noscript
+          ublock-origin
+          keepassxc-browser
+          sponsorblock
+          export-cookies-txt
+        ];
         search = {
           default = "DuckDuckGo";
           force = true; # Force replace search file

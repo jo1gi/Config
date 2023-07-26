@@ -3,12 +3,13 @@
 {
   config = {
     programs.neovim = {
+      # autocmd ColorScheme * call highlight#update()
+      # colorscheme base16-gruvbox-dark-medium
       extraConfig = ''
         set runtimepath^=${config.home.homeDirectory}/.config/neovim
         lua require('jo1gi')
         set mouse=""
-        autocmd ColorScheme * call highlight#update()
-        colorscheme base16-gruvbox-dark-medium
+        colorscheme gruvbox
       '';
       plugins = with pkgs.vimPlugins; [
         vim-commentary # Commenting shortcuts
@@ -26,6 +27,7 @@
         nvim-web-devicons # Icons for different plugins
         neo-tree-nvim # File tree
         nui-nvim # UI Library
+        gruvbox-nvim
 
         # Language plugins
         nvim-lspconfig # Main lsp
