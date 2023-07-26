@@ -50,7 +50,7 @@
 
   # Globally available packages
 	environment.systemPackages = with pkgs; [
-		wget git alacritty neovim
+		wget git alacritty neovim btrfs-progs
 	];
 
   # Kernel parameters
