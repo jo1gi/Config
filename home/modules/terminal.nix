@@ -47,6 +47,7 @@
       stow
       git-annex
       git-annex-remote-rclone
+      magic-wormhole
 
       # File manipulation
       ffmpeg
