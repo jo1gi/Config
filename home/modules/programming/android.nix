@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-
   config = lib.mkIf config.jo1gi.programming.android.enable {
 
     nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -27,5 +26,12 @@
       kotlin.enable = true;
     };
 
+  };
+
+  options.jo1gi.programming.android = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
   };
 }

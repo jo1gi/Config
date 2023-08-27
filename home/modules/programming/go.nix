@@ -15,4 +15,11 @@
     };
 
   };
+
+  options.jo1gi.programming.go = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+  };
 }
