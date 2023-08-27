@@ -17,4 +17,11 @@
     };
 
   };
+
+  options.jo1gi.programming.rust = {
+    useRustup = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+  };
 }
