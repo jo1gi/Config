@@ -3,12 +3,12 @@
 {
   imports = [
     ../home.nix
-    ../modules/partisia.nix
   ];
 
   config.jo1gi = {
     terminal.fontsize = 13;
     general.enable = true;
+    partisia.enable = true;
     windowmanager.enable = true;
   };
 

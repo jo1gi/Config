@@ -1,21 +1,29 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [
-    jetbrains.idea-ultimate
-    watchman
-    rustup
-    maven
-  ];
+  config = lib.mkIf config.jo1gi.partisia.enable {
 
-  jo1gi.programming = {
-    java = {
-      enable = true;
-      jdk = pkgs.jdk17;
+    home.packages = with pkgs; [
+      jetbrains.idea-ultimate
+      watchman
+      maven
+    ];
+
+    jo1gi.programming = {
+      java = {
+        enable = true;
+        jdk = pkgs.jdk17;
+      };
+      nodejs.enable = true;
+      rust = {
+        enable = true;
+        useRustup = true;
+      };
     };
-    nodejs.enable = true;
-    rust = {
-      enable = true;
-    };
+  };
+
+  options.jo1gi.partisia.enable = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
   };
 }

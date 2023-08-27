@@ -26,6 +26,7 @@
     ./modules/general.nix
     ./modules/gtk.nix
     ./modules/mail.nix
+    ./modules/partisia.nix
     ./modules/programming/mod.nix
     ./modules/programs/alacritty.nix
     ./modules/programs/emacs.nix
