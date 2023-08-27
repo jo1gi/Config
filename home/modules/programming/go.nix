@@ -9,7 +9,7 @@
     ];
 
     programs.neovim = {
-      extractLuaConfig = ''
+      extraLuaConfig = ''
         require('jo1gi.helpers.setup_lsp')("gopls")
       '';
     };
