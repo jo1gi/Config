@@ -6,8 +6,8 @@
     home.packages = with pkgs; [
       gradle
       gradle-completion
-      jdk
       jdt-language-server
+      config.jo1gi.programming.java.jdk
     ];
 
     programs.neovim = {
@@ -16,5 +16,12 @@
       ];
     };
 
+  };
+
+  options.jo1gi.programming.java = {
+    jdk = lib.mkOption {
+      type = lib.types.package;
+      default = pkgs.jdk;
+    };
   };
 }

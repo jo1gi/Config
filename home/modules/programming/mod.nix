@@ -7,6 +7,8 @@
     ./haxe.nix
     ./java.nix
     ./kotlin.nix
+    ./nim.nix
+    ./nodejs.nix
     ./python.nix
     ./rust.nix
   ];
@@ -33,9 +35,9 @@
       programming = {
         go.enable = true;
         haxe.enable = true;
-        java.enable = true;
+        nim.enable = false;
         python.enable = true;
-        rust.enable = true;
+        rust.enable = false;
       };
     };
 
@@ -63,6 +65,14 @@
       default = false;
     };
     kotlin.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+    nim.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+    nodejs.enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
     };
