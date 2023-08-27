@@ -1,7 +1,11 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   config = lib.mkIf config.jo1gi.partisia.enable {
+
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "idea-ultimate"
+    ];
 
     home.packages = with pkgs; [
       jetbrains.idea-ultimate
