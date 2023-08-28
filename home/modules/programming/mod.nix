@@ -8,6 +8,7 @@
     ./java.nix
     ./kotlin.nix
     ./nim.nix
+    ./nodejs.nix
     ./python.nix
     ./rust.nix
   ];
@@ -32,10 +33,6 @@
     jo1gi = {
       terminal.enable = true;
       programming = {
-        go.enable = true;
-        haxe.enable = true;
-        java.enable = true;
-        nim.enable = true;
         python.enable = true;
         rust.enable = true;
       };
@@ -47,38 +44,6 @@
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-    };
-    android.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
-    go.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
-    haxe.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
-    java.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
-    kotlin.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
-    nim.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
-    python.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
-    rust.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
     };
   };
 

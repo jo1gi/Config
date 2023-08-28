@@ -27,4 +27,11 @@
     };
 
   };
+
+  options.jo1gi.programming.nim = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+  };
 }

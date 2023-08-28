@@ -23,4 +23,11 @@
     };
 
   };
+
+  options.jo1gi.programming.haxe = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+  };
 }

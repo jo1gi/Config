@@ -26,6 +26,10 @@
         system = "x86_64-linux";
         modules = [ ./nixos/devices/lenovo.nix ];
       };
+      partisia = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./nixos/devices/partisia.nix ];
+      };
       mailserver = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./nixos/devices/mailserver.nix ];
@@ -46,6 +50,11 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./home/devices/lenovo.nix ];
+      };
+      partisia = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./home/devices/partisia.nix ];
       };
     };
   };

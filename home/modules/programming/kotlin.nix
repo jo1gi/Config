@@ -16,6 +16,12 @@
         kotlin-vim
       ];
     };
+  };
 
+  options.jo1gi.programming.kotlin = {
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
   };
 }

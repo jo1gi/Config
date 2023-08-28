@@ -80,7 +80,7 @@
     };
     font = mkOption {
       type = types.str;
-      default = "InconsolataGo Nerd Font";
+      default = "Monospace";
     };
     fontsize = mkOption {
       type = types.int;
