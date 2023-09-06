@@ -41,9 +41,9 @@
 	users.users.jo1gi = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
-		shell = pkgs.nushell;
+		shell = pkgs.zsh;
 	};
-# programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
 # Fonts
 	fonts.fonts = with pkgs; [

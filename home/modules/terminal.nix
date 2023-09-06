@@ -14,11 +14,11 @@
       mbsync.enable   = false;
       neomutt.enable  = false;
       notmuch.enable  = false;
-      nushell.enable  = true;
+      nushell.enable  = false;
       ssh.enable      = true;
       starship.enable = true;
       vifm.enable     = true;
-      zsh.enable      = false;
+      zsh.enable      = true;
       zoxide.enable   = true;
     };
 
