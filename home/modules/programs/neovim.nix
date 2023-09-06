@@ -1,15 +1,18 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
+let
+  cfg = config.programs.neovim;
+in
 {
   config = {
     programs.neovim = {
       # autocmd ColorScheme * call highlight#update()
       # colorscheme base16-gruvbox-dark-medium
       extraConfig = ''
-        set runtimepath^=${config.home.homeDirectory}/.config/neovim
-        lua require('jo1gi')
-        set mouse=""
-        colorscheme gruvbox
+      set runtimepath^=${config.home.homeDirectory}/.config/neovim
+      lua require('jo1gi')
+      set mouse=""
+      colorscheme gruvbox
       '';
       plugins = with pkgs.vimPlugins; [
         vim-commentary # Commenting shortcuts
@@ -39,8 +42,7 @@
         vim-jinja
         vim-toml
         vim-mustache-handlebars
-        nvim-treesitter
-        (nvim-treesitter.withPlugins(_: pkgs.tree-sitter.allGrammars))
+        (nvim-treesitter.withPlugins(_: cfg.treeSitterGrammars))
         nvim-treesitter-textobjects
         nvim-ts-rainbow
 
@@ -51,10 +53,17 @@
         nvim-snippy
         cmp-snippy
       ];
-    extraPython3Packages = (ps: with ps; [
-      pynvim
-      requests
-    ]);
+      extraPython3Packages = (ps: with ps; [
+        pynvim
+        requests
+      ]);
+    };
   };
-};
+
+  options.programs.neovim = {
+    treeSitterGrammars = lib.mkOption {
+      type = lib.types.listOf lib.types.package;
+      default = [];
+    };
+  };
 }
