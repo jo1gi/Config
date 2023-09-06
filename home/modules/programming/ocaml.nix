@@ -18,9 +18,6 @@ in
       plugins = with pkgs.vimPlugins; [
         vim-ocaml
       ];
-      treeSitterGrammars = [
-        pkgs.vimPlugins.nvim-treesitter-parsers.ocaml
-      ];
     };
   };
 

@@ -19,9 +19,6 @@ in
       extraLuaConfig = ''
         require('jo1gi.helpers.setup_lsp')("rust_analyzer")
       '';
-      treeSitterGrammars = [
-        pkgs.vimPlugins.nvim-treesitter-parsers.rust
-      ];
     };
 
   };

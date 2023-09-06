@@ -27,9 +27,6 @@
       extraLuaConfig = ''
         require('jo1gi.helpers.setup_lsp')("pylsp")
       '';
-      treeSitterGrammars = [
-        pkgs.vimPlugins.nvim-treesitter-parsers.python
-      ];
     };
 
   };

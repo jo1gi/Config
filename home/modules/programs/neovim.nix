@@ -42,7 +42,7 @@ in
         vim-jinja
         vim-toml
         vim-mustache-handlebars
-        (nvim-treesitter.withPlugins(_: cfg.treeSitterGrammars))
+        nvim-treesitter.withAllGrammars
         nvim-treesitter-textobjects
         nvim-ts-rainbow
 
@@ -57,13 +57,6 @@ in
         pynvim
         requests
       ]);
-    };
-  };
-
-  options.programs.neovim = {
-    treeSitterGrammars = lib.mkOption {
-      type = lib.types.listOf lib.types.package;
-      default = [];
     };
   };
 }
