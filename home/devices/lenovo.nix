@@ -3,10 +3,12 @@
 {
   imports = [
     ../home.nix
+    ../modules/temporary/compilers.nix
+    ../modules/temporary/dissy.nix
   ];
 
   config.jo1gi = {
-    terminal.fontsize = 13;
+    terminal.fontsize = 11;
     general.enable = true;
     windowmanager.enable = true;
   };

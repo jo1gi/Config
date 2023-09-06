@@ -9,6 +9,7 @@
     ./kotlin.nix
     ./nim.nix
     ./nodejs.nix
+    ./ocaml.nix
     ./python.nix
     ./rust.nix
   ];
