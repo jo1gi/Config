@@ -5,14 +5,22 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    home.pacakges = with pkgs; [
-      ocaml
-      ocamlPackages.lsp
+    home.packages = with pkgs; [
+      cfg.package
+      ocamlPackages.ocaml-lsp
+      dune_3
+      opam
     ];
     programs.neovim = {
       extraLuaConfig = ''
         require('jo1gi.helpers.setup_lsp')('ocamllsp')
       '';
+      plugins = with pkgs.vimPlugins; [
+        vim-ocaml
+      ];
+      treeSitterGrammars = [
+        pkgs.vimPlugins.nvim-treesitter-parsers.ocaml
+      ];
     };
   };
 
@@ -20,6 +28,10 @@ in
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
+    };
+    package = lib.mkOption {
+      type = lib.types.package;
+      default = pkgs.ocaml;
     };
   };
 }
