@@ -5,7 +5,7 @@
 		# Powersave mode
     powerManagement = {
       cpuFreqGovernor = lib.mkDefault "powersave";
-      powertop.enable = true;
+      powertop.enable = lib.mkDefault true;
     };
 		# Enable touchpad
     services.xserver.libinput = {

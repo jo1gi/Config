@@ -8,6 +8,13 @@
     ../modules/hardware/laptop.nix
   ];
 
+  virtualisation.docker.enable = true;
+
+  powerManagement = {
+    cpuFreqGovernor = "performance";
+    powertop.enable = false;
+  };
+
   # Misc
   networking.hostName = "partisia";
 }
