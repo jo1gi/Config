@@ -1,6 +1,6 @@
 # Basic options
 auto-reload yes # Automatic reload when opening Newsboat
-browser openurl
+browser tae
 feed-sort-order title
 prepopulate-query-feeds yes # Automaticly updated query feeds
 show-read-feeds no

@@ -6,6 +6,7 @@
     ../modules/groups/server.nix
     ../modules/services/syncthing.nix
     ../modules/services/mail.nix
+    # ../modules/services/nextcloud.nix
   ];
 
   # Boot
@@ -86,12 +87,5 @@
       incomplete-dir = "/mnt/storagebox/torrents/incomplete";
       download-dir = "/mnt/storagebox/torrents/download";
     };
-    # home = "/home/jo1gi/transmission";
-    # settings = let
-    #   baseDir = "/mnt/storagebox/torrents";
-    # in {
-    #   incomplete-dir = "${baseDir}/incomplete";
-    #   download-dir = "${baseDir}/download";
-    # };
   };
 }

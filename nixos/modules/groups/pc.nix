@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  system.stateVersion = "21.05";
+	system.stateVersion = "21.05";
 
 	# Timezone
 	time.timeZone = "Europe/Copenhagen";
@@ -11,19 +11,19 @@
 		font = "Lat2-Terminus16";
 		keyMap = "dk";
 	};
-  services.xserver.layout = "dk";
+	services.xserver.layout = "dk";
 	i18n.defaultLocale = "en_DK.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "da_DK.UTF-8";
-    LC_IDENTIFICATION = "da_DK.UTF-8";
-    LC_MEASUREMENT = "da_DK.UTF-8";
-    LC_MONETARY = "da_DK.UTF-8";
-    LC_NAME = "da_DK.UTF-8";
-    LC_NUMERIC = "da_DK.UTF-8";
-    LC_PAPER = "da_DK.UTF-8";
-    LC_TELEPHONE = "da_DK.UTF-8";
-    LC_TIME = "da_DK.UTF-8";
-  };
+	i18n.extraLocaleSettings = {
+		LC_ADDRESS = "da_DK.UTF-8";
+		LC_IDENTIFICATION = "da_DK.UTF-8";
+		LC_MEASUREMENT = "da_DK.UTF-8";
+		LC_MONETARY = "da_DK.UTF-8";
+		LC_NAME = "da_DK.UTF-8";
+		LC_NUMERIC = "da_DK.UTF-8";
+		LC_PAPER = "da_DK.UTF-8";
+		LC_TELEPHONE = "da_DK.UTF-8";
+		LC_TIME = "da_DK.UTF-8";
+	};
 
 	# Networking
 	networking = {
@@ -31,13 +31,13 @@
 		useDHCP = false;
 		networkmanager = {
 			enable = true;
-      wifi = {
-        powersave = false;
-      };
+			wifi = {
+				powersave = false;
+			};
 		};
 	};
 
-	# User
+# User
 	users.users.jo1gi = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
@@ -45,46 +45,46 @@
 	};
   programs.zsh.enable = true;
 
-  # Fonts
+# Fonts
 	fonts.fonts = with pkgs; [
 		nerdfonts
-    libertinus
-    gentium
+			libertinus
+			gentium
 	];
 
-  # Udisk
-  services.udisks2.enable = true;
+# Udisk
+	services.udisks2.enable = true;
 
-  # Mail certificate
-  security.pki.certificateFiles = [
-    ../../../assets/mailserver.crt
-  ];
+# Mail certificate
+	security.pki.certificateFiles = [
+		../../../assets/mailserver.crt
+	];
 
-  # Globally available packages
+# Globally available packages
 	environment.systemPackages = with pkgs; [
 		wget git alacritty neovim btrfs-progs
 	];
 
-  # Kernel parameters
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
-  boot.supportedFilesystems = [ "ntfs" ];
+# Kernel parameters
+	boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
+	boot.supportedFilesystems = [ "ntfs" ];
 
-  # Firmware
-  hardware = {
-    enableRedistributableFirmware = true;
-    enableAllFirmware = true;
-  };
+# Firmware
+	hardware = {
+		enableRedistributableFirmware = true;
+		enableAllFirmware = true;
+	};
 
-  imports = [
-    ../hardware/standard-filesystems.nix
-    ../programs/adb.nix
-    ../programs/doas.nix
-    ../programs/nix.nix
-    ../services/sound/pipewire.nix
-    ../services/syncthing.nix
-    ../services/systemd-boot.nix
-    ../services/virtualisation/docker.nix
-    ../services/virtualisation/qemu.nix
-  ];
+	imports = [
+		../hardware/standard-filesystems.nix
+			../programs/adb.nix
+			../programs/doas.nix
+			../programs/nix.nix
+			../services/sound/pipewire.nix
+			../services/syncthing.nix
+			../services/systemd-boot.nix
+			../services/virtualisation/docker.nix
+			../services/virtualisation/qemu.nix
+	];
 
 }

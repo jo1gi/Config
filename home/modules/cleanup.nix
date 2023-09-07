@@ -14,6 +14,7 @@ in
     CARGO_HOME = "${configHome}/cargo";
     CUDA_CACHE_PATH = "${cacheHome}/nv";
     DOCKER_CONFIG = "${configHome}/docker";
+    GOPATH = "${dataHome}/go";
     GRADLE_USER_HOME = "${dataHome}/gradle";
     HISTFILE = "${stateHome}/terminal-history";
     INPUTRC = "${configHome}/readline/inputrc";

@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 {
-  config = lib.mkIf config.jo1gi.partisia.enable {
+  config = {
 
     nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "idea-ultimate"
@@ -24,10 +24,5 @@
         useRustup = true;
       };
     };
-  };
-
-  options.jo1gi.partisia.enable = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
   };
 }

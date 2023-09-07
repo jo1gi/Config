@@ -14,6 +14,7 @@
       mbsync.enable   = false;
       neomutt.enable  = false;
       notmuch.enable  = false;
+      nushell.enable  = false;
       ssh.enable      = true;
       starship.enable = true;
       vifm.enable     = true;
