@@ -6,10 +6,7 @@
       terminal.enable = true;
     };
 
-    programs = {
-      alacritty.enable = true;
-      mpv.enable = true;
-    };
+    programs.mpv.enable = true;
 
     home.packages = with pkgs; [
       sxiv
@@ -21,6 +18,9 @@
 
   options.jo1gi.windowmanager.enable = lib.mkOption {
     type = lib.types.bool;
-    default = false;
+    default = lib.lists.any lib.trivial.id [
+      config.wayland.windowManager.sway.enable
+      config.xsession.windowManager.i3.enable
+    ];
   };
 }

@@ -22,12 +22,14 @@
   imports = [
     ./modules/base16.nix
     ./modules/cleanup.nix
+    ./modules/desktops/i3.nix
     ./modules/desktops/sway.nix
     ./modules/general.nix
     ./modules/gtk.nix
     ./modules/mail.nix
     ./modules/programming/mod.nix
     ./modules/programs/alacritty.nix
+    ./modules/programs/autorandr.nix
     ./modules/programs/emacs.nix
     ./modules/programs/exa.nix
     ./modules/programs/firefox.nix

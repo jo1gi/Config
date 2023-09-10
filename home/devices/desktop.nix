@@ -6,8 +6,10 @@
     ../modules/temporary/compilers.nix
   ];
 
-  config.jo1gi = {
-    general.enable = true;
-    windowmanager.enable = true;
+  config = {
+    jo1gi = {
+      general.enable = true;
+    };
+    xsession.windowManager.i3.enable = true;
   };
 }

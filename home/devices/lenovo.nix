@@ -10,7 +10,6 @@
   config.jo1gi = {
     terminal.fontsize = 11;
     general.enable = true;
-    windowmanager.enable = true;
   };
 
   config.wayland.windowManager.sway.enable = true;
