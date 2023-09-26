@@ -35,7 +35,7 @@ opt.concealcursor = "n"
 
 -- Folding
 opt.foldmethod = "indent"
-opt.foldlevel = 1
+opt.foldlevel = 0
 
 -- Searching
 opt.smartcase = true
