@@ -25,7 +25,7 @@ nmap("<leader>cy", "<cmd>UltiSnipsEdit<CR>")
 nmap("<C-c>", "<cmd>ConjureEvalRoot<cr>")
 
 -- Telescope
-nmap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<cr>")
+nmap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 
 -- NeoTree
 nmap("<C-f>", "<cmd>NeoTreeFloatToggle<cr>")
@@ -35,6 +35,7 @@ map('t', "<Esc>", '<C-\\><C-n>')
 
 -- Which-key
 local wk = require("which-key")
+local telescope_builtin = require("telescope.builtin")
 wk.setup{}
 wk.register({
     ["åa"] = {
@@ -57,12 +58,15 @@ wk.register({
         name = "LSP",
         a = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
         d = { function() vim.diagnostic.open_float(nil, {focus=false}) end, "Diagnostics window" },
-        g = { function() vim.lsp.buf.definition() end, "Goto definition" },
+        g = { vim.lsp.buf.definition, "Goto definition" },
         h = { "<cmd>Lspsaga hover_doc<CR>", "Hover Documentation" },
+        i = { telescope_builtin.lsp_implementations, "Implementations" },
         -- h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover documentation" },
+        s = { telescope_builtin.lsp_document_symbols, "Symbols" },
         r = { "<cmd>Lspsaga rename<CR>" ,"Rename" },
         -- r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
         t = { "<cmd>TroubleToggle<CR>", "Toggle Trouble window" },
+        u = { telescope_builtin.lsp_references, "References" }
     },
     ["ås"] = {
         name = "Spelling",
