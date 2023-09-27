@@ -1,4 +1,3 @@
-# vim: ft=nix
 { config, pkgs, lib, ... }:
 
 {
@@ -93,11 +92,10 @@
           "privacy.resistFingerprinting" = true;
           "network.trr.mode" = 3; # Disallow unencrypted dns lookups
         };
-        userChrome = ''
-          #titlebar {
-            display: None;
-          }
-        '';
+        userChrome = builtins.readFile ./userChrome.css;
+        userContent = lib.strings.concatStringsSep "\n" [
+          (builtins.readFile ./usercontent/brightspace.css)
+        ];
         bookmarks = {
           # Application interfaces
           "Syncthing" = {

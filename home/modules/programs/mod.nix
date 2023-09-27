@@ -6,7 +6,7 @@
     ./autorandr.nix
     ./emacs.nix
     ./exa.nix
-    ./firefox.nix
+    ./firefox/default.nix
     ./git.nix
     ./hledger.nix
     ./just.nix
