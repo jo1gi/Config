@@ -9,7 +9,7 @@ in
       pkgs.tae
     ];
 
-    xdg.configFile."tae/tae.toml".text = inputs.toTOML cfg.rules;
+    # xdg.configFile."tae/tae.toml".text = "";
 
     programs.tae = {
       rules = [
@@ -40,19 +40,23 @@ in
       type = types.listOf (types.submodule {
         options = {
           command = mkOption {
-            type = types.str;
+            type = types.nullOr types.str;
+            default = null;
           };
           host = mkOption {
-            type = types.str;
+            type = types.nullOr types.str;
+            default = null;
           };
           redirect = mkOption {
-            type = types.str;
+            type = types.nullOr types.str;
+            default = null;
           };
           scheme = mkOption {
-            type = types.str;
+            type = types.nullOr types.str;
+            default = null;
           };
         };
-      })
+      });
     };
 
   };

@@ -15,6 +15,7 @@
       inputs.nur.overlay
       (self: super: {
         openurl = pkgs.callPackage ./packages/openurl.nix {};
+        tae = pkgs.callPackage ./packages/tae.nix {};
       })
     ];
   };
@@ -22,29 +23,14 @@
   imports = [
     ./modules/base16.nix
     ./modules/cleanup.nix
-    ./modules/desktops/i3.nix
-    ./modules/desktops/sway.nix
     ./modules/general.nix
     ./modules/gtk.nix
     ./modules/mail.nix
-    ./modules/programming/mod.nix
-    ./modules/programs/alacritty.nix
-    ./modules/programs/autorandr.nix
-    ./modules/programs/emacs.nix
-    ./modules/programs/exa.nix
-    ./modules/programs/firefox.nix
-    ./modules/programs/git.nix
-    ./modules/programs/hledger.nix
-    ./modules/programs/just.nix
-    ./modules/programs/vifm.nix
-    ./modules/programs/mpd.nix
-    ./modules/programs/mpv.nix
-    ./modules/programs/neovim.nix
-    ./modules/programs/ssh.nix
-    ./modules/programs/starship.nix
-    ./modules/programs/vscode.nix
-    ./modules/programs/zsh.nix
     ./modules/terminal.nix
     ./modules/windowmanager.nix
+
+    ./modules/coding/mod.nix
+    ./modules/desktops/mod.nix
+    ./modules/programs/mod.nix
   ];
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   config.programs.newsboat = {
@@ -25,4 +25,5 @@
       color article             white   black
     '';
   };
+  config.programs.tae.enable = lib.mkIf config.programs.newsboat.enable true;
 }

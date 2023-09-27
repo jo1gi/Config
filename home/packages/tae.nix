@@ -8,8 +8,8 @@ rustPlatform.buildRustPackage rec {
     owner = "jo1gi";
     repo = pname;
     rev = version;
-    hash = "";
+    hash = "sha256-1y76zrniOaLmDx65udA1mF+8xJQZJvR3oiCqUGMLDNY=";
   };
 
-  cargoHash = "";
+  cargoHash = "sha256-Dwyj0E3KS50gl2btIA3uj9xgj9A85LdYc2YP3ZiXKOk=";
 }

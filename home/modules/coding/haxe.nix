@@ -21,6 +21,17 @@
           };
         })
       ];
+      extraLuaConfig = ''
+        local nvim_lsp = require("lspconfig")
+
+        -- Cmp setup
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+        nvim_lsp.haxe_language_server.setup({
+          cmd = {"node", "/home/jo1gi/Downloads/Repos/haxe-language-server/bin/server.js"},
+          capabilities = capabilities,
+        })
+      '';
     };
 
   };

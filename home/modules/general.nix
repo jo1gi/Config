@@ -15,6 +15,7 @@ in
     programs = {
       alacritty.enable = defaults.terminal == "alacritty";
       firefox.enable = defaults.browser == "firefox";
+      newsboat.enable = true;
       thunderbird.enable = true;
     };
 
@@ -30,7 +31,6 @@ in
       inkscape
       keepassxc
       libreoffice
-      newsboat
       tremc
       qbittorrent
     ];
