@@ -17,6 +17,7 @@ in
       firefox.enable = defaults.browser == "firefox";
       newsboat.enable = true;
       thunderbird.enable = true;
+      typst.enable = true;
     };
 
     services = {

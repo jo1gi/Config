@@ -18,6 +18,7 @@
     ./ssh.nix
     ./starship.nix
     ./tae.nix
+    ./typst.nix
     ./vscode.nix
     ./zsh.nix
   ];
