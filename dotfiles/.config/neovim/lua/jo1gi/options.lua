@@ -43,6 +43,17 @@ opt.smartcase = true
 -- Spelling
 opt.spell = false
 
+-- Filetypes
+vim.filetype.add({
+    extension = {
+        ll = "llvm",
+        llvm = "llvm",
+        rasi = "css",
+        sile = "sile",
+        typ = "typst",
+    },
+})
+
 -- Deoplete
 g["deoplete#enable_at_startup"] = 1
 
