@@ -1,8 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  terminal = "alacritty";
-  browser = "firefox";
+  defaults = config.jo1gi.defaults;
   launcher = "dmenu_path | dmenu | xargs swaymsg exec --";
   volumeChange = 2;
   brightnessChange = 2;
@@ -13,12 +12,12 @@ in
     config.wayland.windowManager.sway = {
       config = {
         modifier = "Mod4";
-        terminal = terminal;
+        terminal = defaults.terminal;
 
         keybindings = {
           # Launch applications
-          "ctrl+mod1+t" = "exec ${terminal}";
-          "ctrl+mod1+f" = "exec ${browser}";
+          "ctrl+mod1+t" = "exec ${defaults.terminal}";
+          "ctrl+mod1+f" = "exec ${defaults.browser}";
           "mod1+Space" = "exec ${launcher}";
 
           # Sound
@@ -112,82 +111,84 @@ in
             "Up" = "resize shrink height 10px";
             "Right" = "resize grow width 10px";
 
-          # Return to default mode
-          "Return" = "mode \"default\"";
-          "Escape" = "mode \"default\"";
+            # Return to default mode
+            "Return" = "mode \"default\"";
+            "Escape" = "mode \"default\"";
+          };
         };
-      };
 
-      colors = with config.lib.base16.theme; {
-        focused = {
-          border = "#${base0A-hex}";
-          background = "#${base00-hex}";
-          text = "#${base05-hex}";
-          indicator = "#${base0B-hex}";
-          childBorder = "#${base0A-hex}";
-        };
-        unfocused = {
-          border = "#${base00-hex}";
-          background = "#${base00-hex}";
-          text = "#${base05-hex}";
-          indicator = "#${base0B-hex}";
-          childBorder = "#${base00-hex}";
-        };
-      };
-
-      bars = [{
-        position = "top";
-        fonts = {
-          names = [ "DejaVu Sans Mono" ];
-          style = "bold";
-          size = 9.0;
-        };
-        statusCommand = "while date +'%H:%M'; do sleep 60; done";
         colors = with config.lib.base16.theme; {
-          background = "#${base00-hex}";
-          focusedWorkspace = {
+          focused = {
+            border = "#${base0A-hex}";
             background = "#${base00-hex}";
-            border = "#${base00-hex}";
-            text = "#${base0A-hex}";
-          };
-          inactiveWorkspace = {
-            background = "#${base00-hex}";
-            border = "#${base00-hex}";
             text = "#${base05-hex}";
+            indicator = "#${base0B-hex}";
+            childBorder = "#${base0A-hex}";
           };
-          statusline = "#${base05-hex}";
+          unfocused = {
+            border = "#${base00-hex}";
+            background = "#${base00-hex}";
+            text = "#${base05-hex}";
+            indicator = "#${base0B-hex}";
+            childBorder = "#${base00-hex}";
+          };
         };
-      }];
 
-      gaps = {
-        inner = 10;
-        outer = 5;
-      };
+        bars = [{
+          position = "top";
+          fonts = {
+            names = [ "DejaVu Sans Mono" ];
+            style = "bold";
+            size = 9.0;
+          };
+          statusCommand = "while date +'%H:%M'; do sleep 60; done";
+          colors = with config.lib.base16.theme; {
+            background = "#${base00-hex}";
+            focusedWorkspace = {
+              background = "#${base00-hex}";
+              border = "#${base00-hex}";
+              text = "#${base0A-hex}";
+            };
+            inactiveWorkspace = {
+              background = "#${base00-hex}";
+              border = "#${base00-hex}";
+              text = "#${base05-hex}";
+            };
+            statusline = "#${base05-hex}";
+          };
+        }];
 
-      floating = {
-        criteria = [ { window_role = "pop-up"; } ];
-      };
-
-      input = {
-        "type:keyboard" = {
-          xkb_layout = "dk";
-          natural_scroll = "disabled";
+        gaps = {
+          inner = 10;
+          outer = 5;
         };
-      };
 
-      output = {
-        "*" = { bg = "~/.config/wallpapers/gruvbox-dark.png fill"; };
-      };
+        floating = {
+          criteria = [ { window_role = "pop-up"; } ];
+        };
 
-      window.border = 2;
+        input = {
+          "type:keyboard" = {
+            xkb_layout = "dk";
+            natural_scroll = "disabled";
+          };
+        };
 
-      assigns = {
-        "password" = [{ app_id = "org.keepassxc.KeePassXC"; }];
+        output = {
+          "*" = { bg = config.themes.wallpaper; };
+        };
+
+        window.border = 2;
+
+        assigns = {
+          "password" = [{ id = "org.keepassxc.KeePassXC"; }];
+          "mail" = [{ class = "thunderbird"; }];
+          "torrent" = [{ class = "KeepassXC"; }];
+        };
       };
     };
-  };
-  config.home.file."${config.home.homeDirectory}/.local/bin/music" = lib.mkIf swayEnabled {
-    source = ../../../scripts/sway-music.sh;
-    executable = true;
-  };
-}
+    config.home.file."${config.home.homeDirectory}/.local/bin/music" = lib.mkIf swayEnabled {
+      source = ../../../scripts/sway-music.sh;
+      executable = true;
+    };
+  }

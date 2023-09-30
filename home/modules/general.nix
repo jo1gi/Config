@@ -1,7 +1,11 @@
 { config, lib, pkgs, ... }:
 
+let
+  defaults = config.jo1gi.defaults;
+  cfg = config.jo1gi.general;
+in
 {
-  config = lib.mkIf config.jo1gi.general.enable {
+  config = lib.mkIf cfg.enable {
 
     jo1gi = {
       terminal.enable = true;
@@ -9,8 +13,11 @@
     };
 
     programs = {
-      firefox.enable = true;
+      alacritty.enable = defaults.terminal == "alacritty";
+      firefox.enable = defaults.browser == "firefox";
+      newsboat.enable = true;
       thunderbird.enable = true;
+      typst.enable = true;
     };
 
     services = {
@@ -25,15 +32,32 @@
       inkscape
       keepassxc
       libreoffice
-      newsboat
       tremc
       qbittorrent
     ];
   };
 
-  options.jo1gi.general.enable = lib.mkOption {
-    type = lib.types.bool;
-    default = false;
+  options.jo1gi = {
+    general = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+    };
+    defaults = {
+      browser = lib.mkOption {
+        type = lib.types.enum [
+          "firefox"
+        ];
+        default = "firefox";
+      };
+      terminal = lib.mkOption {
+        type = lib.types.enum [
+          "alacritty"
+        ];
+        default = "alacritty";
+      };
+    };
   };
 
 }

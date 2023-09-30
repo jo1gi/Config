@@ -1,17 +1,3 @@
-local nvim_lsp = require('lspconfig')
-
--- Cmp Setup
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
--- Language setup
--- servers = { "rust_analyzer", "metals" }
--- for _, lsp in ipairs(servers) do
---     nvim_lsp[lsp].setup {
---         capabilities = capabilities,
---     }
--- end
-
 -- Improvements
 local saga = require('lspsaga')
 saga.init_lsp_saga()

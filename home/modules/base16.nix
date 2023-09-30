@@ -17,9 +17,14 @@
     };
   };
 
+  # options.themes.wallpaper = lib.mkOption {
+  #   type = lib.types.path;
+  #   default = ../../../dotfiles/.config/wallpapers/gruvbox-dark.png;
+  # };
+
   options.themes.wallpaper = lib.mkOption {
-    type = lib.types.path;
-    default = ../../../dotfiles/.config/wallpapers/gruvbox-dark.png;
+    type = lib.types.str;
+    default = "${config.xdg.configHome}/wallpapers/gruvbox-dark.png";
   };
 
 }
