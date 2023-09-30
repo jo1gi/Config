@@ -10,12 +10,12 @@
     home.packages = with pkgs; [
       jetbrains.idea-ultimate
       watchman
-      maven
     ];
 
     jo1gi.programming = {
       java = {
         enable = true;
+        enableMaven = true;
         jdk = pkgs.jdk17;
       };
       nodejs.enable = true;

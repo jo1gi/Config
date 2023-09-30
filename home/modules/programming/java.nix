@@ -11,7 +11,12 @@ in
       gradle-completion
       jdt-language-server
       cfg.jdk
+      (lib.mkIf cfg.enableMaven maven)
     ];
+
+    home.sessionVariables = {
+      JAVA_HOME="${cfg.jdk}";
+    };
 
     programs.neovim = {
       plugins = with pkgs.vimPlugins; [
@@ -31,6 +36,11 @@ in
     jdk = lib.mkOption {
       type = lib.types.package;
       default = pkgs.jdk;
+    };
+
+    enableMaven = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
     };
   };
 }
