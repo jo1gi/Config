@@ -21,8 +21,11 @@
       # Editor files (just in case)
       ".vscode"
       ".idea"
-      # Build systems
+      # Java Build systems
       "jdtls-workspace"
+      ".classpath"
+      ".project"
+      ".settings"
     ];
   };
 
