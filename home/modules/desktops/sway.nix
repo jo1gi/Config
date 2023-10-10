@@ -2,7 +2,19 @@
 
 let
   defaults = config.jo1gi.defaults;
-  launcher = "dmenu_path | dmenu | xargs swaymsg exec --";
+  # launcher = "dmenu_path | dmenu | xargs swaymsg exec --";
+  launcher = lib.strings.concatStringsSep " " [
+    "bemenu-run"
+    "--nb '#282828'"
+    "--ab '#282828'"
+    "--fb '#282828'"
+    "--hb '#282828'"
+    "--tb '#282828'"
+    "--tf '#fabd2f'"
+    "--hf '#fabd2f'"
+    "-B 0"
+    "-H 20"
+  ];
   volumeChange = 2;
   brightnessChange = 2;
   mod = "Mod4";
@@ -175,15 +187,15 @@ in
         };
 
         output = {
-          "*" = { bg = config.themes.wallpaper; };
+          "*" = { bg = "${config.themes.wallpaper} fill"; };
         };
 
         window.border = 2;
 
         assigns = {
-          "password" = [{ id = "org.keepassxc.KeePassXC"; }];
-          "mail" = [{ class = "thunderbird"; }];
-          "torrent" = [{ class = "KeepassXC"; }];
+          # "password" = [{ id = "org.keepassxc.KeePassXC"; }];
+          # "mail" = [{ class = "thunderbird"; }];
+          # "torrent" = [{ class = "KeepassXC"; }];
         };
       };
     };
