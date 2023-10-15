@@ -20,6 +20,7 @@
     ./tae.nix
     ./typst.nix
     ./vscode.nix
+    ./zathura.nix
     ./zsh.nix
   ];
 }

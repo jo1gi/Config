@@ -6,11 +6,13 @@
       terminal.enable = true;
     };
 
-    programs.mpv.enable = true;
+    programs = {
+      mpv.enable = true;
+      zathura.enable = true;
+    };
 
     home.packages = with pkgs; [
       sxiv
-      zathura
       pamixer
       pulsemixer
     ];
