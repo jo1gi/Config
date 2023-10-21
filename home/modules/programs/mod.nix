@@ -5,7 +5,7 @@
     ./alacritty.nix
     ./autorandr.nix
     ./emacs.nix
-    ./exa.nix
+    ./eza.nix
     ./firefox/default.nix
     ./git.nix
     ./hledger.nix

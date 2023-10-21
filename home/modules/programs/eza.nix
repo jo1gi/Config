@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  programs.exa = {
+  programs.eza = {
     enableAliases = true;
   };
 }
