@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./autorandr.nix
+    ./duf.nix
     ./emacs.nix
     ./eza.nix
     ./firefox/default.nix
