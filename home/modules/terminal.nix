@@ -32,8 +32,7 @@
       "$HOME/.local/share/gem/ruby/2.7.0/bin"
     ];
 
-    # Universal shell aliases
-    jo1gi.terminal.aliases = {
+    home.shellAliases = {
       udm = "udisksctl mount -b";
     };
 
@@ -98,9 +97,6 @@
     opacity = mkOption {
       type = types.int;
       default = 1;
-    };
-    aliases = mkOption {
-      type = types.attrsOf types.str;
     };
   };
 }
