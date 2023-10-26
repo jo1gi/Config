@@ -3,6 +3,6 @@
 {
   imports = [
     ./i3.nix
-    ./sway.nix
+    ./sway/default.nix
   ];
 }

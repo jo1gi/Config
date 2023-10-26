@@ -199,8 +199,14 @@ in
         };
       };
     };
-    config.home.file."${config.home.homeDirectory}/.local/bin/music" = lib.mkIf swayEnabled {
-      source = ../../../scripts/sway-music.sh;
-      executable = true;
+    config.home.file = lib.mkIf swayEnabled {
+      "${config.home.homeDirectory}/.local/bin/music" = lib.mkIf swayEnabled {
+        source = ./scripts/music.sh;
+        executable = true;
+      };
+      "${config.home.homeDirectory}/.local/bin/rename-workspace" = lib.mkIf swayEnabled {
+        source = ./scripts/rename-workspace.sh;
+        executable = true;
+      };
     };
   }
