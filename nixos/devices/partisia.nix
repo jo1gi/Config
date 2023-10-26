@@ -16,5 +16,10 @@
   };
 
   # Misc
-  networking.hostName = "partisia";
+  networking = {
+    hostName = "partisia";
+    hosts = {
+      "127.0.0.1" = [ "docker" ];
+    };
+  };
 }
