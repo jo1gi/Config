@@ -2,6 +2,8 @@
 require("jo1gi.options")
 -- Key mappings for all modes
 require("jo1gi.mappings")
+-- Git
+require("jo1gi.git")
 -- Filetree
 require("jo1gi.filetree")
 -- Statusline
