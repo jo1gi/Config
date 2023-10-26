@@ -25,7 +25,7 @@ in
     };
 
     home.file."${config.home.homeDirectory}/.local/bin/maven-dependency-search" = lib.mkIf cfg.enableMaven {
-      source = ../../../scripts/maven-dependency-search.sh;
+      source = ./scripts/maven-dependency-search.sh;
       executable = true;
     };
 

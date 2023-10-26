@@ -16,6 +16,13 @@
 
   config = lib.mkIf config.jo1gi.programming.enable {
 
+    home.file = {
+      "${config.home.homeDirectory}/.local/bin/rerun-pipeline" = {
+        source = ./scripts/rerun-pipeline.sh;
+        executable = true;
+      };
+    };
+
     home.packages = with pkgs; [
       stdenv
       gcc
