@@ -12,8 +12,11 @@
       general.enable = true;
     };
 
-    programs.zsh = {
-      initExtra = builtins.readFile ../../scripts/partisia-projects.zsh;
+    programs = {
+      glab.enable = true;
+      zsh = {
+        initExtra = builtins.readFile ../../scripts/partisia-projects.zsh;
+      };
     };
 
     home.shellAliases = {

@@ -8,6 +8,7 @@
     ./exa.nix
     ./firefox/default.nix
     ./git.nix
+    ./glab/default.nix
     ./hledger.nix
     ./just.nix
     ./newsboat.nix
