@@ -4,8 +4,9 @@
   imports = [
     ./alacritty.nix
     ./autorandr.nix
+    ./duf.nix
     ./emacs.nix
-    ./exa.nix
+    ./eza.nix
     ./firefox/default.nix
     ./git.nix
     ./glab/default.nix
@@ -21,6 +22,7 @@
     ./tae.nix
     ./typst.nix
     ./vscode.nix
+    ./zathura.nix
     ./zsh.nix
   ];
 }

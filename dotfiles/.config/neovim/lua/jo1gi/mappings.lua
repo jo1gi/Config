@@ -28,7 +28,7 @@ nmap("<C-c>", "<cmd>ConjureEvalRoot<cr>")
 nmap("<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 
 -- NeoTree
-nmap("<C-f>", "<cmd>NeoTreeFloatToggle<cr>")
+nmap("<C-f>", "<cmd>Neotree filesystem toggle float<cr>")
 
 -- Terminal
 map('t', "<Esc>", '<C-\\><C-n>')

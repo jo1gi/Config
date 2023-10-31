@@ -7,7 +7,7 @@
     # Programs with home-manager configs
     programs = {
       bat.enable      = true;
-      exa.enable      = true;
+      eza.enable      = true;
       git.enable      = true;
       hledger.enable  = true;
       myjust.enable   = true;
