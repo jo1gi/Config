@@ -46,10 +46,10 @@
   programs.zsh.enable = true;
 
 # Fonts
-	fonts.fonts = with pkgs; [
-		nerdfonts
-			libertinus
-			gentium
+	fonts.packages = with pkgs; [
+    nerdfonts
+    libertinus
+    gentium
 	];
 
 # Udisk
