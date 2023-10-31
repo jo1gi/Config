@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../home.nix
-    ../modules/temporary/partisia.nix
+    ../../home.nix
+    ../../modules/temporary/partisia.nix
   ];
 
   config = {
@@ -15,7 +15,7 @@
     programs = {
       glab.enable = true;
       zsh = {
-        initExtra = builtins.readFile ../../scripts/partisia-projects.zsh;
+        initExtra = builtins.readFile ./partisia-projects.zsh;
       };
     };
 
