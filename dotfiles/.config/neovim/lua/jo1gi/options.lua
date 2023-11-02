@@ -29,14 +29,6 @@ opt.list = true
 opt.wrap = true
 opt.linebreak = true
 
--- Conceal
-opt.conceallevel = 0
-opt.concealcursor = "n"
-
--- Folding
-opt.foldmethod = "indent"
-opt.foldlevel = 0
-
 -- Searching
 opt.smartcase = true
 
