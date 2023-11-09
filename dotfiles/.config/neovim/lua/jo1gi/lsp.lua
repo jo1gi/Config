@@ -1,6 +1,13 @@
 -- Improvements
 local saga = require('lspsaga')
-saga.setup()
+saga.setup({
+    symbol_in_winbar = {
+        enable = false
+    },
+    ui = {
+        code_action = ''
+    }
+})
 
 -- Custom icons
 require('lspkind').init({

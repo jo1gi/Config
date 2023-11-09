@@ -14,7 +14,6 @@
     overlays = [
       inputs.nur.overlay
       (self: super: {
-        openurl = pkgs.callPackage ./packages/openurl.nix {};
         tae = pkgs.callPackage ./packages/tae.nix {};
       })
     ];
@@ -29,8 +28,8 @@
     ./modules/terminal.nix
     ./modules/windowmanager.nix
 
-    ./modules/coding/mod.nix
-    ./modules/desktops/mod.nix
-    ./modules/programs/mod.nix
+    ./modules/coding
+    ./modules/desktops
+    ./modules/programs
   ];
 }
