@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../../home.nix
-    ../../modules/temporary/partisia.nix
+    ../home.nix
+    ../modules/temporary/partisia.nix
   ];
 
   config = {
@@ -14,13 +14,9 @@
 
     programs = {
       glab.enable = true;
-      zsh = {
-        initExtra = builtins.readFile ./partisia-projects.zsh;
+      findProject = {
+        dir = "$HOME/src/secata";
       };
-    };
-
-    home.shellAliases = {
-      "p" = "projects";
     };
 
     wayland.windowManager.sway.enable = true;

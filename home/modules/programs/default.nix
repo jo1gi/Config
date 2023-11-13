@@ -7,9 +7,10 @@
     ./duf.nix
     ./emacs.nix
     ./eza.nix
-    ./firefox/default.nix
+    ./find-projects
+    ./firefox
     ./git.nix
-    ./glab/default.nix
+    ./glab
     ./hledger.nix
     ./just.nix
     ./newsboat.nix
