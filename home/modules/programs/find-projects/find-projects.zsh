@@ -1,6 +1,6 @@
 function projects() {
-    project=$(find $HOME/src/secata -name '.git' | grep -Po '(?<=(/home/jo1gi/src/secata/)).+(?=(/.git))' | sk)
+    project=$(find "${FIND_PROJECTS_DIR}" -name '.git' | grep -Po "(?<=(${FIND_PROJECTS_DIR}/)).+(?=(/.git))" | sk)
     workspace_num=$(swaymsg -t get_workspaces | jq '. | map(select(.focused)) | .[0].num')
     swaymsg "rename workspace to \"$workspace_num: $project\""
-    cd "$HOME/src/secata/$project"
+    cd "${FIND_PROJECTS_DIR}/$project"
 }
