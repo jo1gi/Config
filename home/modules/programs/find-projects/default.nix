@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   cfg = config.programs.findProject;
@@ -6,6 +6,12 @@ in
 {
   config = lib.mkIf cfg.enable {
     programs.zsh.initExtra = builtins.readFile ./find-projects.zsh;
+    home.packages = with pkgs; [
+      skim
+      jq
+      gnugrep
+      findutils
+    ];
     home.shellAliases = {
       p = "projects";
     };
