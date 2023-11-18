@@ -133,12 +133,18 @@ in
           };
         }];
 
+        assigns = {
+          "1: browser" = [{ class = "firefox"; }];
+          "mail" = [{ class = "thunderbird"; }];
+          "password" = [{ class = "KeePassXC"; }];
+          "torrent" = [{ class = "qBittorrent"; }];
+        };
+
         modes = swayCfg.modes;
         colors = swayCfg.colors;
         gaps = swayCfg.gaps;
         floating = swayCfg.floating;
         window.border = swayCfg.window.border;
-        assigns = swayCfg.assigns;
       };
     };
     home.file = lib.mkIf cfg.enable {
