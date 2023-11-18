@@ -40,6 +40,9 @@ vim.filetype.add({
     extension = {
         ll = "llvm",
         llvm = "llvm",
+        mly = "menhir",
+        mll = "ocamllex",
+        nimble = "nim.nimble",
         rasi = "css",
         sile = "sile",
         typ = "typst",
