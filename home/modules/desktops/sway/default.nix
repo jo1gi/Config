@@ -200,12 +200,12 @@ in
       };
     };
     config.home.file = lib.mkIf swayEnabled {
-      "${config.home.homeDirectory}/.local/bin/music" = lib.mkIf swayEnabled {
-        source = ./scripts/music.sh;
+      "${config.home.homeDirectory}/.local/bin/rename-workspace" = {
+        source = ./rename-workspace.sh;
         executable = true;
       };
-      "${config.home.homeDirectory}/.local/bin/rename-workspace" = lib.mkIf swayEnabled {
-        source = ./scripts/rename-workspace.sh;
+      "${config.home.homeDirectory}/.local/bin/set-workspace-name" = {
+        source = ./set-workspace-name.sh;
         executable = true;
       };
     };
