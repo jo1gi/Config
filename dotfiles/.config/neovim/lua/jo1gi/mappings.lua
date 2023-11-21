@@ -68,6 +68,14 @@ wk.register({
         t = { "<cmd>TroubleToggle<CR>", "Toggle Trouble window" },
         u = { telescope_builtin.lsp_references, "References" }
     },
+    ["åo"] = {
+        name = "Options",
+        m = {
+            name = "Mouse",
+            e = { "<cmd>set mouse=a<cr>", "Enable mouse" },
+            d = { "<cmd>set mouse=<cr>", "Disable mouse" },
+        }
+    },
     ["ås"] = {
         name = "Spelling",
         t = { "<cmd>set spell<CR>", "Toggle" },
