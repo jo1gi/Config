@@ -78,6 +78,7 @@ wk.register({
     ["åt"] = {
         name = "Telescope",
         a = { function() require('telescope.builtin').lsp_code_actions() end, "Code actions" },
+        b = { function() require('telescope.builtin').buffers() end, "Buffers" },
         g = { function() require('telescope.builtin').git_commits() end, "Git commits" },
     },
     ["åu"] = {
