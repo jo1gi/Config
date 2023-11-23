@@ -15,7 +15,7 @@
     ./just.nix
     ./newsboat.nix
     ./vifm.nix
-    ./mpd.nix
+    ./mpd
     ./mpv.nix
     ./neovim.nix
     ./ssh.nix

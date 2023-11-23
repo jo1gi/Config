@@ -133,12 +133,28 @@ in
           };
         }];
 
+        assigns = {
+          "1: browser" = [{ class = "firefox"; }];
+          "mail" = [{ class = "thunderbird"; }];
+          "password" = [{ class = "KeePassXC"; }];
+          "torrent" = [{ class = "qBittorrent"; }];
+        };
+
         modes = swayCfg.modes;
         colors = swayCfg.colors;
         gaps = swayCfg.gaps;
         floating = swayCfg.floating;
         window.border = swayCfg.window.border;
-        assigns = swayCfg.assigns;
+      };
+    };
+    home.file = lib.mkIf cfg.enable {
+      "${config.home.homeDirectory}/.local/bin/rename-workspace" = {
+        source = ./rename-workspace.sh;
+        executable = true;
+      };
+      "${config.home.homeDirectory}/.local/bin/set-workspace-name" = {
+        source = ./set-workspace-name.sh;
+        executable = true;
       };
     };
   };

@@ -11,6 +11,7 @@
     ./nodejs.nix
     ./ocaml.nix
     ./python.nix
+    ./racket.nix
     ./rust.nix
   ];
 

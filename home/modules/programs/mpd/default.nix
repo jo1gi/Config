@@ -17,5 +17,11 @@
         }
       '';
     };
+    home.file = {
+      "${config.home.homeDirectory}/.local/bin/music" = {
+        source = ./music.sh;
+        executable = true;
+      };
+    };
   };
 }
