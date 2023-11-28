@@ -7,6 +7,7 @@
     ./haxe.nix
     ./java.nix
     ./kotlin.nix
+    ./lua.nix
     ./nim.nix
     ./nodejs.nix
     ./ocaml.nix
