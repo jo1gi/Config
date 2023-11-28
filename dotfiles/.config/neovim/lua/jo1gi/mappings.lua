@@ -68,6 +68,14 @@ wk.register({
         t = { "<cmd>TroubleToggle<CR>", "Toggle Trouble window" },
         u = { telescope_builtin.lsp_references, "References" }
     },
+    ["åo"] = {
+        name = "Options",
+        m = {
+            name = "Mouse",
+            e = { "<cmd>set mouse=a<cr>", "Enable mouse" },
+            d = { "<cmd>set mouse=<cr>", "Disable mouse" },
+        }
+    },
     ["ås"] = {
         name = "Spelling",
         t = { "<cmd>set spell<CR>", "Toggle" },
@@ -78,6 +86,7 @@ wk.register({
     ["åt"] = {
         name = "Telescope",
         a = { function() require('telescope.builtin').lsp_code_actions() end, "Code actions" },
+        b = { function() require('telescope.builtin').buffers() end, "Buffers" },
         g = { function() require('telescope.builtin').git_commits() end, "Git commits" },
     },
     ["åu"] = {

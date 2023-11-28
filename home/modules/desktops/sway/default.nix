@@ -199,6 +199,10 @@ in
         };
       };
     };
+    config.home.packages = lib.mkIf swayEnabled [
+      pkgs.wl-clipboard
+      pkgs.jq # For scripts
+    ];
     config.home.file = lib.mkIf swayEnabled {
       "${config.home.homeDirectory}/.local/bin/rename-workspace" = {
         source = ./rename-workspace.sh;
