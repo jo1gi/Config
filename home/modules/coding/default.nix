@@ -14,6 +14,7 @@
     ./python.nix
     ./racket.nix
     ./rust.nix
+    ./teal.nix
   ];
 
   config = lib.mkIf config.jo1gi.programming.enable {
