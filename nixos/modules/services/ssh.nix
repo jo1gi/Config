@@ -9,9 +9,11 @@ in
 {
   services.openssh = {
     enable = true;
-    permitRootLogin = "yes";
-    passwordAuthentication = false;
-    gatewayPorts = "yes";
+    settings = {
+      PermitRootLogin = "yes";
+      PasswordAuthentication = false;
+      GatewayPorts = "yes";
+    };
   };
 
   users.users.jo1gi = {
