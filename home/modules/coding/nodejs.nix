@@ -5,7 +5,15 @@
 
     home.packages = with pkgs; [
       nodejs
+      typescript
+      nodePackages.typescript-language-server
     ];
+
+    programs.neovim = {
+      extraLuaConfig = ''
+        require('jo1gi.helpers.setup_lsp')("tsserver")
+      '';
+    };
 
   };
 
