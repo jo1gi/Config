@@ -25,4 +25,5 @@
 
   # Misc
   networking.hostName = "desktop";
+  services.resolved.enable = true;
 }

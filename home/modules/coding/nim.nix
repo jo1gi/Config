@@ -3,9 +3,10 @@
 {
   config = lib.mkIf config.jo1gi.programming.nim.enable {
 
-    home.packages = with pkgs.unstable; [
+    home.packages = with pkgs; [
       nim
       nimlsp
+      nimble
     ];
 
     home.file."${config.home.homeDirectory}/.config/nimble/nimble.ini".text = ''
@@ -19,7 +20,7 @@
     programs.neovim = {
       extraLuaConfig = ''
         -- require('jo1gi.helpers.setup_lsp')("nim_langserver")
-        require('jo1gi.helpers.setup_lsp')("nimlsp")
+        require('jo1gi.helpers.setup_lsp')("nimls")
       '';
       plugins = with pkgs.vimPlugins; [
         nim-vim

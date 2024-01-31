@@ -49,7 +49,7 @@ with config.jo1gi; {
           white = "0x${base07-hex}";
         };
       };
-      key_bindings = [
+      keyboard.bindings = [
         {
           key = "Return";
           mods = "Super";

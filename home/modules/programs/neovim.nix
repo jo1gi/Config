@@ -6,13 +6,11 @@ in
 {
   config = {
     programs.neovim = {
-      # autocmd ColorScheme * call highlight#update()
-      # colorscheme base16-gruvbox-dark-medium
       extraConfig = ''
-      set runtimepath^=${config.home.homeDirectory}/.config/neovim
-      lua require('jo1gi')
-      set mouse=""
-      colorscheme gruvbox
+        set runtimepath^=${config.home.homeDirectory}/.config/neovim
+        lua require('jo1gi')
+        set mouse=""
+        colorscheme gruvbox
       '';
       plugins = with pkgs.vimPlugins; [
         vim-commentary # Commenting shortcuts
@@ -43,8 +41,7 @@ in
         vim-toml
         vim-mustache-handlebars
         nvim-treesitter.withAllGrammars
-        nvim-treesitter-textobjects
-        nvim-ts-rainbow
+        # nvim-treesitter-textobjects
 
         # Completion
         cmp-path # Path completion
