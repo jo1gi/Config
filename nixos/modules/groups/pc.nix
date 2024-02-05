@@ -11,7 +11,7 @@
 		font = "Lat2-Terminus16";
 		keyMap = "dk";
 	};
-	services.xserver.layout = "dk";
+	services.xserver.xkb.layout = "dk";
 	i18n.defaultLocale = "en_DK.UTF-8";
 	i18n.extraLocaleSettings = {
 		LC_ADDRESS = "da_DK.UTF-8";
