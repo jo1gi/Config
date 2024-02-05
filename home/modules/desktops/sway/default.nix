@@ -19,6 +19,7 @@ let
   brightnessChange = 2;
   mod = "Mod4";
   swayEnabled = config.wayland.windowManager.sway.enable;
+  create_scratchpad = name: "mark \"${name}\", move scratchpad";
   toggle_scratchpad = name: "[con_mark=\"${name}\"] scratchpad show";
 in
   {
@@ -54,8 +55,8 @@ in
           "${mod}+s" = "sticky toggle";
 
           # Scratchpad
-          "${mod}+Shift+minus" = "mark \"scratchpad\", move scratchpad";
-          "${mod}+Shift+m" = "mark \"music\", move scratchpad";
+          "${mod}+Shift+minus" = create_scratchpad "scratchpad";
+          "${mod}+Shift+m" = create_scratchpad "music";
 
           "${mod}+minus" = toggle_scratchpad "scratchpad";
           "${mod}+m" = toggle_scratchpad "music";
