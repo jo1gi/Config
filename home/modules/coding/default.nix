@@ -9,6 +9,7 @@
     ./kotlin.nix
     ./lua.nix
     ./nim.nix
+    ./nix.nix
     ./nodejs.nix
     ./ocaml.nix
     ./python.nix
