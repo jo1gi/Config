@@ -84,7 +84,7 @@
     };
     fontsize = mkOption {
       type = types.int;
-      default = 10;
+      default = 9;
     };
     margin = mkOption {
       type = types.int;
