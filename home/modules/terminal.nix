@@ -80,11 +80,11 @@
     };
     font = mkOption {
       type = types.str;
-      default = "InconsolataGo Nerd Font";
+      default = "Iosevka Nerd Font";
     };
     fontsize = mkOption {
       type = types.int;
-      default = 11;
+      default = 10;
     };
     margin = mkOption {
       type = types.int;
