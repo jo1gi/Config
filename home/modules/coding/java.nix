@@ -24,6 +24,11 @@ in
       ];
     };
 
+    home.shellAliases = {
+      spotless = lib.mkIf cfg.enableMaven "mvn spotless:apply";
+      maven-chech-dependencies = lib.mkIf cfg.enableMaven "mvn org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce -Drules=dependencyConvergence,requireUpperBoundDeps";
+    };
+
     home.file."${config.home.homeDirectory}/.local/bin/maven-dependency-search" = lib.mkIf cfg.enableMaven {
       source = ./scripts/maven-dependency-search.sh;
       executable = true;
