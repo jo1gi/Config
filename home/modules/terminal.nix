@@ -6,6 +6,7 @@
 
     # Programs with home-manager configs
     programs = {
+      atuin.enable    = true;
       bat.enable      = true;
       eza.enable      = true;
       git.enable      = true;

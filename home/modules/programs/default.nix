@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./atuin.nix
     ./autorandr.nix
     ./duf.nix
     ./emacs.nix
