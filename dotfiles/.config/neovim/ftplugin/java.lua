@@ -4,6 +4,6 @@ local workspace_dir = '/home/jo1gi/.local/share/jdtls-workspaces/' .. project_na
 
 local config = {
     cmd = {'jdtls', '-data', workspace_dir},
-    root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew', 'pom.xml'}),
+    root_dir = require('jdtls.setup').find_root({'.git'}),
 }
 require('jdtls').start_or_attach(config)
