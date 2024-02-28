@@ -6,6 +6,7 @@
   ];
 
   config = {
+
     jo1gi = {
       terminal.fontsize = 13;
       general.enable = true;
@@ -36,6 +37,10 @@
       jetbrains.idea-community
       # jetbrains.idea-ultimate
       watchman
+    ];
+
+    home.sessionPath = [
+      "$HOME/bin"
     ];
 
   };
