@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../home.nix
+    ../../home.nix
   ];
 
   config = {
@@ -42,6 +42,10 @@
     home.sessionPath = [
       "$HOME/bin"
     ];
+
+    home.sessionVariables = {
+      GITLAB_PRIVATE_TOKEN = builtins.readFile ./gitlab_private_token;
+    };
 
   };
 

@@ -1,4 +1,5 @@
-dotfiles/.config/newsboat/urls filter=git-crypt diff=git-crypt
 dotfiles/.config/mailpassword filter=git-crypt diff=git-crypt
+dotfiles/.config/newsboat/urls filter=git-crypt diff=git-crypt
 dotfiles/.config/rclone/rclone.conf filter=git-crypt diff=git-crypt
+home/devices/partisia/gitlab_private_token filter=git-crypt diff=git-crypt
 nixos/modules/services/syncthing.nix filter=git-crypt diff=git-crypt
