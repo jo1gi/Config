@@ -19,6 +19,7 @@
       ssh.enable      = true;
       starship.enable = true;
       vifm.enable     = true;
+      yt-dlp.enable   = true;
       zsh.enable      = true;
       zoxide.enable   = true;
     };
@@ -65,8 +66,6 @@
       ripgrep # Seach tool like grep
       entr # Run command on file update
       skim # Fuzzy finder
-      yt-dlp # Video downloader
-      # openurl # Url opening tool
       jq # Json cli tool
       file # Info about file
       asciidoctor

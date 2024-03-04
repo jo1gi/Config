@@ -24,6 +24,7 @@
     ./tae.nix
     ./typst.nix
     ./vscode.nix
+    ./yt-dlp.nix
     ./zathura.nix
     ./zsh.nix
   ];
