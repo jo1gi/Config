@@ -19,6 +19,7 @@
     ./mpd
     ./mpv.nix
     ./neovim.nix
+    ./qutebrowser.nix
     ./ssh.nix
     ./starship.nix
     ./tae.nix
