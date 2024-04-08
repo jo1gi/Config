@@ -11,6 +11,7 @@
       terminal.fontsize = 13;
       general.enable = true;
       programming = {
+        haxe.enable = true;
         java = {
           enable = true;
           enableMaven = true;
@@ -25,17 +26,20 @@
     };
 
     programs = {
+      qutebrowser.enable = true;
       glab.enable = true;
       findProject = {
-        dir = "$HOME/src/secata";
+        dir = "$HOME/Projects";
+        # dir = "$HOME/src/secata";
       };
     };
 
+    # xsession.windowManager.i3.enable = true;
     wayland.windowManager.sway.enable = true;
 
     home.packages = with pkgs; [
-      jetbrains.idea-community
-      # jetbrains.idea-ultimate
+      # jetbrains.idea-community
+      jetbrains.idea-ultimate
       watchman
     ];
 
