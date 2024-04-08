@@ -55,11 +55,17 @@ in
           "${mod}+s" = "sticky toggle";
 
           # Scratchpad
-          "${mod}+Shift+minus" = create_scratchpad "scratchpad";
+          "${mod}+Shift+minus" = create_scratchpad "scratchpad0";
+          "${mod}+Shift+period" = create_scratchpad "scratchpad1";
+          "${mod}+Shift+comma" = create_scratchpad "scratchpad2";
           "${mod}+Shift+m" = create_scratchpad "music";
+          "${mod}+Shift+n" = create_scratchpad "notes";
 
-          "${mod}+minus" = toggle_scratchpad "scratchpad";
+          "${mod}+minus" = toggle_scratchpad "scratchpad0";
+          "${mod}+period" = toggle_scratchpad "scratchpad1";
+          "${mod}+comma" = toggle_scratchpad "scratchpad2";
           "${mod}+m" = toggle_scratchpad "music";
+          "${mod}+n" = toggle_scratchpad "notes";
 
           # Disable laptop screen
           "${mod}+mod1+l" = "output eDP-1 toggle";
