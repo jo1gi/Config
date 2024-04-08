@@ -2,6 +2,7 @@
 
 let
   cfg = config.jo1gi.programming.java;
+  ifMavenEnabled = lib.mkIf cfg.maven.enable;
 in
 {
   config = lib.mkIf cfg.enable {
@@ -11,7 +12,7 @@ in
       gradle-completion
       jdt-language-server
       cfg.jdk
-      (lib.mkIf cfg.enableMaven maven)
+      (ifMavenEnabled maven)
     ];
 
     home.sessionVariables = {
@@ -25,13 +26,18 @@ in
     };
 
     home.shellAliases = {
-      spotless = lib.mkIf cfg.enableMaven "mvn spotless:apply";
-      maven-chech-dependencies = lib.mkIf cfg.enableMaven "mvn org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce -Drules=dependencyConvergence,requireUpperBoundDeps";
+      spotless = ifMavenEnabled "mvn spotless:apply";
+      maven-chech-dependencies = ifMavenEnabled "mvn org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce -Drules=dependencyConvergence,requireUpperBoundDeps";
     };
 
-    home.file."${config.home.homeDirectory}/.local/bin/maven-dependency-search" = lib.mkIf cfg.enableMaven {
-      source = ./scripts/maven-dependency-search.sh;
-      executable = true;
+    home.file = {
+      "${config.home.homeDirectory}/.local/bin/maven-dependency-search" = ifMavenEnabled {
+        source = ./scripts/maven-dependency-search.sh;
+        executable = true;
+      };
+      "${config.home.homeDirectory}/.mvn/maven.config" = ifMavenEnabled {
+        text = builtins.concatStringsSep "\n" cfg.maven.options;
+      };
     };
 
   };
@@ -48,9 +54,15 @@ in
       default = pkgs.jdk;
     };
 
-    enableMaven = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
+    maven = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+      options = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+      };
     };
   };
 }

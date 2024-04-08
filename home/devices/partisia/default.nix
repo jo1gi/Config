@@ -14,8 +14,13 @@
         haxe.enable = true;
         java = {
           enable = true;
-          enableMaven = true;
           jdk = pkgs.jdk17;
+          maven = {
+            enable = true;
+            options = [
+              "-Dmaven.gitcommitid.skip=true"
+            ];
+          };
         };
         nodejs.enable = true;
         rust = {
