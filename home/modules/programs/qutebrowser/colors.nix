@@ -1,4 +1,6 @@
-{
+{ theme }:
+
+with theme; {
   completion.fg = "#${base05-hex}";
   completion.odd.bg = "#${base00-hex}";
   completion.even.bg = "#${base00-hex}";

@@ -1,7 +1,0 @@
-{ config, ... }:
-
-{
-  config.programs.qutebrowser = {
-    
-  };
-}
