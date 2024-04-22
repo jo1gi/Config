@@ -37,6 +37,9 @@
         dir = "$HOME/Projects";
         # dir = "$HOME/src/secata";
       };
+      direnv = {
+        enable = true;
+      };
     };
 
     # xsession.windowManager.i3.enable = true;
