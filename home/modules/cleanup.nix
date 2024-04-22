@@ -11,7 +11,6 @@ in
   home.sessionVariables = {
     ANDROID_HOME = "${dataHome}/android";
     AUDIBLE_CONFIG_DIR = "${configHome}/audible";
-    CARGO_HOME = "${configHome}/cargo";
     CUDA_CACHE_PATH = "${cacheHome}/nv";
     DOCKER_CONFIG = "${configHome}/docker";
     GOPATH = "${dataHome}/go";
