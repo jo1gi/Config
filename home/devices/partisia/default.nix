@@ -50,6 +50,10 @@
       # jetbrains.idea-community
       jetbrains.idea-ultimate
       watchman
+
+      kubectl
+      minikube
+      pulumi-bin
     ];
 
     home.sessionPath = [
@@ -58,6 +62,7 @@
 
     home.sessionVariables = {
       GITLAB_PRIVATE_TOKEN = builtins.readFile ./gitlab_private_token;
+      PULUMI_CONFIG_PASSPHRASE = "";
     };
 
   };
