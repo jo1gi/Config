@@ -3,7 +3,7 @@
 
 {
   programs.zsh = {
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     autocd = true;
     dotDir = ".config/zsh";
     plugins = [
