@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   config = {
@@ -9,7 +9,7 @@
     services.gpg-agent = {
       enableSshSupport = true;
       enableZshIntegration = true;
-      pinentryFlavor = "qt";
+      pinentryPackage = pkgs.pinentry-qt;
     };
   };
 }

@@ -5,6 +5,7 @@
     ./android.nix
     ./go.nix
     ./haxe.nix
+    ./hy.nix
     ./java.nix
     ./kotlin.nix
     ./lua.nix
