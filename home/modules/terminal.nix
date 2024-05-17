@@ -6,6 +6,7 @@
 
     # Programs with home-manager configs
     programs = {
+      atuin.enable    = true;
       bat.enable      = true;
       eza.enable      = true;
       git.enable      = true;
@@ -18,6 +19,7 @@
       ssh.enable      = true;
       starship.enable = true;
       vifm.enable     = true;
+      yt-dlp.enable   = true;
       zsh.enable      = true;
       zoxide.enable   = true;
     };
@@ -64,8 +66,6 @@
       ripgrep # Seach tool like grep
       entr # Run command on file update
       skim # Fuzzy finder
-      yt-dlp # Video downloader
-      # openurl # Url opening tool
       jq # Json cli tool
       file # Info about file
       asciidoctor
@@ -80,11 +80,11 @@
     };
     font = mkOption {
       type = types.str;
-      default = "InconsolataGo Nerd Font";
+      default = "Iosevka Nerd Font";
     };
     fontsize = mkOption {
       type = types.int;
-      default = 11;
+      default = 9;
     };
     margin = mkOption {
       type = types.int;

@@ -16,6 +16,8 @@ let
     "--hf '#fabd2f'"
     "-B 0"
   ];
+  create_scratchpad = name: "mark \"${name}\", move scratchpad";
+  toggle_scratchpad = name: "[con_mark=\"${name}\"] scratchpad show";
 in
 {
   config = {
@@ -52,8 +54,17 @@ in
           "${mod}+s" = "sticky toggle";
 
           # Scratchpad
-          "${mod}+Shift+minus" = "move scratchpad";
-          "${mod}+minus" = "scratchpad show";
+          "${mod}+Shift+minus" = create_scratchpad "scratchpad0";
+          "${mod}+Shift+period" = create_scratchpad "scratchpad1";
+          "${mod}+Shift+comma" = create_scratchpad "scratchpad2";
+          "${mod}+Shift+m" = create_scratchpad "music";
+          "${mod}+Shift+n" = create_scratchpad "notes";
+
+          "${mod}+minus" = toggle_scratchpad "scratchpad0";
+          "${mod}+period" = toggle_scratchpad "scratchpad1";
+          "${mod}+comma" = toggle_scratchpad "scratchpad2";
+          "${mod}+m" = toggle_scratchpad "music";
+          "${mod}+n" = toggle_scratchpad "notes";
 
           # Focus
           "${mod}+h" = "focus left";

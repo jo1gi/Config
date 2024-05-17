@@ -9,11 +9,22 @@ let
     rustc
   ];
   rustupPackages = with pkgs; [ rustup ];
+  cargoHome = "${config.xdg.dataHome}/cargo";
 in
 {
   config = lib.mkIf cfg.enable {
 
-    home.packages = if cfg.useRustup then rustupPackages else normalPackages;
+    home = {
+      packages = if cfg.useRustup then rustupPackages else normalPackages;
+      sessionVariables = {
+        CARGO_HOME = cargoHome;
+      };
+      file = {
+        "${cargoHome}/config.toml" = {
+          source = ./assets/cargo-config.toml;
+        };
+      };
+    };
 
     programs.neovim = {
       extraLuaConfig = ''

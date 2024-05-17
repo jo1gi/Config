@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./atuin.nix
     ./autorandr.nix
     ./duf.nix
     ./emacs.nix
@@ -18,11 +19,13 @@
     ./mpd
     ./mpv.nix
     ./neovim.nix
+    ./qutebrowser
     ./ssh.nix
     ./starship.nix
     ./tae.nix
     ./typst.nix
     ./vscode.nix
+    ./yt-dlp.nix
     ./zathura.nix
     ./zsh.nix
   ];

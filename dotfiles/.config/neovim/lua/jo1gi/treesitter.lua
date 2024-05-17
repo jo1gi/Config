@@ -3,7 +3,7 @@ require('nvim-treesitter.configs').setup {
     -- Plugins
     highlight = {
         enable = true,
-        disable = {"latex", "java"},
+        disable = {"latex", "java", "nix"},
         additional_vim_regex_highlighting = { "markdown" },
     },
     indent = {
