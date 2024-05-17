@@ -3,6 +3,7 @@
 {
   imports = [
     ./android.nix
+    ./gerbil.nix
     ./go.nix
     ./haxe.nix
     ./hy.nix
