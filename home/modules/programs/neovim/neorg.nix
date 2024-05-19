@@ -8,14 +8,8 @@ in
     programs.neovim = lib.mkIf cfg.enableNeorg {
       extraLuaConfig = builtins.readFile ./neorg.lua;
 
-      plugins = with pkgs.vimPlugins; with pkgs.luajitPackages; [
+      plugins = with pkgs.vimPlugins; [
         neorg
-
-        plenary-nvim
-        nui-nvim
-        pathlib-nvim
-        lua-utils-nvim
-        nvim-nio
       ];
     };
   };
