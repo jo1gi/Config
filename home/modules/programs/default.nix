@@ -18,7 +18,7 @@
     ./vifm.nix
     ./mpd
     ./mpv.nix
-    ./neovim.nix
+    ./neovim
     ./qutebrowser
     ./ssh.nix
     ./starship.nix
