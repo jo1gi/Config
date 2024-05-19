@@ -7,7 +7,6 @@
     ./autorandr.nix
     ./duf.nix
     ./emacs.nix
-    ./eza.nix
     ./find-projects
     ./firefox
     ./git.nix

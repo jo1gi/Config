@@ -198,7 +198,7 @@ in
         };
 
         output = {
-          "*" = { bg = "${config.themes.wallpaper} fill"; };
+          "*" = { bg = "${../../../../assets/wallpapers/gruvbox-dark.png} fill"; };
         };
 
         window.border = 2;

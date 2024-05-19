@@ -36,6 +36,10 @@
         system = "aarch64-linux";
         modules = [ ./nixos/devices/hetzner.nix ];
       };
+      vision = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./nixos/devices/vision.nix ];
+      };
     };
 
     homeConfigurations = {
