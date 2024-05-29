@@ -54,6 +54,8 @@
       kubectl
       minikube
       pulumi-bin
+
+      create-docker-image
     ];
 
     home.sessionPath = [
@@ -64,6 +66,12 @@
       GITLAB_PRIVATE_TOKEN = builtins.readFile ./gitlab_private_token;
       PULUMI_CONFIG_PASSPHRASE = "";
     };
+
+    nixpkgs.overlays = [
+      (self: super: {
+        create-docker-image = pkgs.callPackage ./scripts/create-docker-image.nix {};
+      })
+    ];
 
   };
 
