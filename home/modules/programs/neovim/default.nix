@@ -4,6 +4,10 @@ let
   cfg = config.programs.neovim;
 in
 {
+  imports = [
+    ./neorg.nix
+  ];
+
   config = {
     programs.neovim = {
       extraConfig = ''

@@ -13,6 +13,7 @@
     config.allowUnfree = true;
     overlays = [
       inputs.nur.overlay
+      inputs.neorg-overlay.overlays.default
       (self: super: {
         tae = pkgs.callPackage ./packages/tae.nix {};
       })

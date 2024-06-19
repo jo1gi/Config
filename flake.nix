@@ -11,6 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     base16.url = "github:alukardbf/base16-nix";
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -35,6 +36,10 @@
       hetzner = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [ ./nixos/devices/hetzner.nix ];
+      };
+      vision = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./nixos/devices/vision.nix ];
       };
     };
 
