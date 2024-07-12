@@ -15,7 +15,7 @@
         fish_style_pwd_dir_length = 1;
       };
       git_branch = {
-        symbol = " ";
+        symbol = "󰘬 ";
         style = "bold yellow";
       };
     };
