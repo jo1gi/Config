@@ -11,7 +11,6 @@
       terminal.fontsize = 13;
       general.enable = true;
       programming = {
-        haxe.enable = true;
         java = {
           enable = true;
           jdk = pkgs.jdk17;
@@ -31,15 +30,9 @@
     };
 
     programs = {
-      qutebrowser.enable = true;
       glab.enable = true;
       findProject = {
         dir = "$HOME/Projects";
-        # dir = "$HOME/src/secata";
-      };
-      direnv = {
-        enable = true;
-        nix-direnv.enable = true;
       };
     };
 
@@ -54,6 +47,9 @@
       kubectl
       minikube
       pulumi-bin
+
+      create-docker-image
+      spotless
     ];
 
     home.sessionPath = [
@@ -64,6 +60,13 @@
       GITLAB_PRIVATE_TOKEN = builtins.readFile ./gitlab_private_token;
       PULUMI_CONFIG_PASSPHRASE = "";
     };
+
+    nixpkgs.overlays = [
+      (self: super: {
+        create-docker-image = pkgs.callPackage ./scripts/create-docker-image.nix {};
+        spotless = pkgs.callPackage ./scripts/spotless.nix {};
+      })
+    ];
 
   };
 

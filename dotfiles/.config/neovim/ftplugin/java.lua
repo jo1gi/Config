@@ -1,9 +1,13 @@
 -- local workspace_dir = vim.fn.getcwd() .. '/jdtls-workspace'
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '/home/jo1gi/.local/share/jdtls-workspaces/' .. project_name
+-- -- local workspace_dir = '.jdtls-workspaces/' .. project_name
 
+-- local config = {
+--     cmd = {'jdtls', '-data', workspace_dir},
+--     root_dir = require('jdtls.setup').find_root({'.git'}),
+-- }
+-- require('jdtls').start_or_attach(config)
 local config = {
-    cmd = {'jdtls', '-data', workspace_dir},
-    root_dir = require('jdtls.setup').find_root({'.git'}),
+    cmd = {'jdtls'},
+    root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
 }
 require('jdtls').start_or_attach(config)

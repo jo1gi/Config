@@ -11,6 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     base16.url = "github:alukardbf/base16-nix";
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

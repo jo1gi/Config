@@ -26,7 +26,6 @@ in
     };
 
     home.shellAliases = {
-      spotless = ifMavenEnabled "mvn spotless:apply";
       maven-chech-dependencies = ifMavenEnabled "mvn org.apache.maven.plugins:maven-enforcer-plugin:3.0.0:enforce -Drules=dependencyConvergence,requireUpperBoundDeps";
     };
 
