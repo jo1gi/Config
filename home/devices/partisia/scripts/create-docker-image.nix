@@ -1,20 +1,22 @@
 { pkgs, stdenv, ... }:
 
 stdenv.mkDerivation {
-  name = "create-docker-image.fnl";
-  src = ./create-docker-image.fnl;
+  name = "create-docker-image.nim";
+  src = ./create_docker_image.nim;
 
-  buildInputs = [
-    (pkgs.luajit.withPackages(ps: with ps; [
-      fennel
-      xml2lua
-    ]))
+  nativeBuildInputs = [
+    pkgs.nim
   ];
+
+  buildPhase = ''
+    cp $src create_docker_image.nim
+    nim compile --nimcache:. -o:create-docker-image -d:release create_docker_image.nim
+  '';
 
   unpackPhase = "true";
 
   installPhase = ''
     mkdir -p $out/bin
-    cp $src $out/bin/create-docker-image
+    cp create-docker-image $out/bin
   '';
 }
