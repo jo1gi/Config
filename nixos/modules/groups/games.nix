@@ -1,12 +1,16 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   config = {
     programs.steam.enable = true;
-    hardware.opengl.driSupport32Bit = true;
-    hardware.opengl.enable = true;
-    hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
-    hardware.pulseaudio.support32Bit = true;
+    hardware = {
+      graphics = {
+        enable = true;
+        enable32Bit = true;
+        extraPackages32 = [ pkgs.pkgsi686Linux.libva ];
+      };
+      pulseaudio.support32Bit = true;
+    };
     environment.systemPackages = with pkgs; [
       # Applications
       lutris
@@ -16,13 +20,13 @@
       vulkan-tools
       vulkan-loader
       mesa
-      mesa_drivers
+      mesa.drivers
 
       # 32 bit
       pkgsi686Linux.vulkan-tools
       pkgsi686Linux.vulkan-loader
       pkgsi686Linux.mesa
-      pkgsi686Linux.mesa_drivers
+      pkgsi686Linux.mesa.drivers
     ];
   };
 }

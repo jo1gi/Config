@@ -2,8 +2,6 @@
 
 {
 	config = {
-		# Can cause problems if enabled
-		sound.enable = false;
 		# rtkit is optional but recommended
 		security.rtkit.enable = true;
 		services.pipewire = {

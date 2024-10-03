@@ -1,12 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 
 {
-  config.services.xserver.displayManager = {
-    autoLogin = {
-      user = "jo1gi";
-      enable = true;
+  config.services = {
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "jo1gi";
+      };
     };
-    lightdm = {
+    xserver.displayManager.lightdm = {
       greeters = {
         gtk = {
           enable = true;

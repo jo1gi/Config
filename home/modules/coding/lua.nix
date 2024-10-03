@@ -7,7 +7,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       luajit
-      luajitPackages.lua-lsp
+      # luajitPackages.lua-lsp
     ];
 
     programs.neovim = {

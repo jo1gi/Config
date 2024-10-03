@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -6,16 +6,19 @@
   ];
 
   config = {
-    # home-manager.users.jo1gi.config.personal.windowmanager.enable = true;
-    services.xserver = {
-      enable = true;
+    services = {
       displayManager = {
         defaultSession = "none+i3";
-        lightdm.enable = true;
       };
-      windowManager.i3 = {
+      xserver = {
         enable = true;
-        package = pkgs.i3-gaps;
+        windowManager.i3 = {
+          enable = true;
+          package = pkgs.i3-gaps;
+        };
+        displayManager.lightdm = {
+          enable = true;
+        };
       };
     };
     users.users.jo1gi.packages = with pkgs; [
